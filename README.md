@@ -1,4 +1,4 @@
-# # Lovable Boilerplate
+# Lovable Boilerplate
 
 > **Reverse-engineered Lovable AI app builder** turned into a developer-friendly React boilerplate with comprehensive AI coding assistant instructions.
 
