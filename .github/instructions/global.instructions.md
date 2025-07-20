@@ -1,11 +1,11 @@
 ---
 applyTo: '**'
 ---
-# React + Vite + shadcn/ui Template
+# React + Vite + shadcn/ui Template - Premium Design System
 
 ## AI System Prompt
 
-This is a React TypeScript project built with Vite, using shadcn/ui components and Tailwind CSS. Below is comprehensive information for AI assistants to understand and work with this project effectively, with emphasis on creating modern, visually compelling designs.
+This is a React TypeScript project built with Vite, using shadcn/ui components and Tailwind CSS. Below is comprehensive information for AI assistants to create **world-class, premium designs** that feel modern, sophisticated, and engaging - never generic or template-like.
 
 ### Project Overview
 - **Framework**: React 18.3.1 with TypeScript
@@ -22,6 +22,7 @@ This is a React TypeScript project built with Vite, using shadcn/ui components a
 /workspaces/greeting-blank-canvas/
 ├── src/
 │   ├── components/ui/        # shadcn/ui components (pre-built)
+│   ├── components/          # Custom components
 │   ├── hooks/               # Custom React hooks
 │   ├── lib/                 # Utility functions
 │   ├── pages/               # Route components
@@ -38,45 +39,399 @@ This is a React TypeScript project built with Vite, using shadcn/ui components a
 └── tsconfig.json            # TypeScript configuration
 ```
 
-### Key Configuration Files
+## PREMIUM DESIGN PRINCIPLES
 
-#### Vite Configuration (`vite.config.ts`)
-- Path alias: `@` maps to `./src`
-- Server runs on port 8080
-- Uses SWC for React compilation
-- Includes lovable-tagger for development
+### Core Design Philosophy
+**Every interface must feel like it was crafted by a top-tier design agency.**
+- **Emotional Impact First**: Ask "Does this make users stop and say 'wow'?"
+- **Sophisticated Hierarchy**: Use contrast, scale, and spacing strategically
+- **Purposeful Motion**: Every animation should enhance usability
+- **Breathing Room**: Generous whitespace creates luxury feel
+- **Cohesive Color Story**: Never use random colors - every choice is intentional
 
-#### Tailwind Configuration (`tailwind.config.ts`)
-- Dark mode support via class strategy
-- Custom theme with CSS variables
-- Responsive design utilities
-- Animation support
+### Visual Quality Standards
+❌ **NEVER CREATE**:
+- Generic card grids with default shadows
+- Plain white backgrounds with black text
+- Basic hover states (simple color changes)
+- Template-like layouts
+- Uniform spacing everywhere
+- Default Tailwind grays (slate-500, gray-400, etc.)
 
-### Routing Structure
+✅ **ALWAYS CREATE**:
+- Dynamic, engaging compositions with visual flow
+- Rich color palettes with gradients and depth
+- Sophisticated micro-interactions
+- Asymmetrical layouts that guide the eye
+- Varied spacing that creates rhythm
+- Brand-consistent color systems
 
-Routes are defined in `src/App.tsx`:
-```tsx
-<Routes>
-  <Route path="/" element={<Index />} />
-  {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-  <Route path="*" element={<NotFound />} />
-</Routes>
+## ADVANCED COLOR SYSTEMS
+
+### Primary Brand Palettes (Pick ONE as your main theme)
+
+#### Luxury Tech
+```css
+Primary: from-slate-900 to-slate-700
+Accent: from-blue-500 to-cyan-400  
+Surface: bg-slate-900/95 backdrop-blur
+Text: text-slate-100
+Muted: text-slate-400
 ```
 
-**Important**: Always add new routes ABOVE the catch-all `*` route to ensure proper routing.
+#### Creative Studio  
+```css
+Primary: from-violet-600 to-fuchsia-500
+Accent: from-orange-400 to-pink-400
+Surface: bg-violet-950/90 backdrop-blur
+Text: text-white
+Muted: text-violet-200
+```
 
-### Available UI Components
+#### Modern Business
+```css
+Primary: from-indigo-600 to-blue-600  
+Accent: from-emerald-400 to-teal-400
+Surface: bg-indigo-950/95 backdrop-blur
+Text: text-indigo-50
+Muted: text-indigo-200
+```
 
-Located in `src/components/ui/`, all components are pre-configured with shadcn/ui:
-- **Layout**: accordion, card, separator, sheet, sidebar, tabs
-- **Forms**: button, input, textarea, select, checkbox, radio-group, switch, form
-- **Navigation**: breadcrumb, command, dropdown-menu, menubar, navigation-menu, pagination
-- **Feedback**: alert, alert-dialog, toast, sonner, progress, skeleton
-- **Data Display**: avatar, badge, table, calendar, chart, carousel
-- **Overlays**: dialog, drawer, hover-card, popover, tooltip
-- **Utilities**: aspect-ratio, collapsible, resizable, scroll-area, slider, toggle
+#### Organic/Health
+```css
+Primary: from-emerald-600 to-teal-600
+Accent: from-yellow-400 to-orange-400  
+Surface: bg-emerald-950/90 backdrop-blur
+Text: text-emerald-50
+Muted: text-emerald-200
+```
 
-### Development Commands
+### Advanced Gradient Patterns
+```tsx
+// Premium backgrounds
+bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-800
+bg-gradient-to-tr from-slate-900 via-blue-900 to-slate-900
+bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-blue-900 via-indigo-900 to-purple-900
+
+// Subtle surface gradients
+bg-gradient-to-br from-white to-slate-50
+bg-gradient-to-tr from-slate-50 to-blue-50/20
+
+// Glowing accents
+bg-gradient-to-r from-blue-500 to-cyan-400 shadow-lg shadow-blue-500/25
+bg-gradient-to-r from-violet-500 to-purple-500 shadow-xl shadow-violet-500/20
+```
+
+## SOPHISTICATED LAYOUT PATTERNS
+
+### Hero Section Archetypes
+
+#### Split Hero with Visual Impact
+```tsx
+<div className="min-h-screen grid lg:grid-cols-2 overflow-hidden">
+  <div className="flex items-center justify-center p-8 lg:p-16 bg-gradient-to-br from-slate-900 to-slate-800">
+    <div className="max-w-xl">
+      <h1 className="text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+        Transform Your
+        <span className="bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
+          {' '}Digital Vision
+        </span>
+      </h1>
+      <p className="text-xl text-slate-300 mb-8 leading-relaxed">
+        Craft experiences that captivate, convert, and create lasting impact
+      </p>
+      <Button className="bg-white text-slate-900 hover:bg-slate-100 px-8 py-4 text-lg font-semibold rounded-full shadow-2xl hover:shadow-white/10 transition-all duration-300">
+        Begin Journey
+      </Button>
+    </div>
+  </div>
+  <div className="bg-gradient-to-tr from-blue-600 to-purple-700 flex items-center justify-center relative overflow-hidden">
+    <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10" />
+    {/* Visual element here */}
+  </div>
+</div>
+```
+
+#### Centered Impact Hero  
+```tsx
+<div className="relative min-h-screen flex items-center justify-center overflow-hidden">
+  <div className="absolute inset-0 bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-800" />
+  <div className="absolute inset-0 bg-[url('/pattern.svg')] opacity-5" />
+  <div className="relative z-10 text-center max-w-5xl mx-auto px-4">
+    <h1 className="text-6xl lg:text-8xl font-bold text-white mb-8 tracking-tight">
+      <span className="block">Redefine</span>
+      <span className="bg-gradient-to-r from-yellow-300 via-orange-300 to-pink-300 bg-clip-text text-transparent">
+        Possibilities
+      </span>
+    </h1>
+    <p className="text-2xl text-slate-200 mb-12 max-w-3xl mx-auto leading-relaxed font-light">
+      Where innovation meets execution, creating digital experiences that transform industries
+    </p>
+    <div className="flex flex-col sm:flex-row gap-4 justify-center">
+      <Button className="bg-white text-slate-900 hover:scale-105 px-10 py-5 text-xl font-semibold rounded-2xl shadow-2xl transition-all duration-300">
+        Explore Now
+      </Button>
+      <Button variant="outline" className="border-white/30 text-white hover:bg-white/10 px-10 py-5 text-xl rounded-2xl transition-all duration-300">
+        Learn More
+      </Button>
+    </div>
+  </div>
+</div>
+```
+
+### Advanced Card Systems
+
+#### Floating Feature Cards
+```tsx
+<div className="grid md:grid-cols-3 gap-8 lg:gap-12">
+  {features.map((feature, index) => (
+    <div 
+      key={index}
+      className="group relative bg-white/5 backdrop-blur-lg rounded-3xl p-8 border border-white/10 hover:border-white/20 transition-all duration-500 hover:scale-105 hover:-translate-y-2"
+      style={{ animationDelay: `${index * 200}ms` }}
+    >
+      <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      <div className="relative z-10">
+        <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">
+          <Icon className="w-8 h-8 text-white" />
+        </div>
+        <h3 className="text-2xl font-bold text-white mb-4">{feature.title}</h3>
+        <p className="text-slate-300 leading-relaxed text-lg">{feature.description}</p>
+      </div>
+    </div>
+  ))}
+</div>
+```
+
+#### Masonry Layout Cards
+```tsx
+<div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
+  {items.map((item, index) => (
+    <div 
+      key={index}
+      className="break-inside-avoid bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-6 border border-slate-700 hover:border-blue-500/50 transition-all duration-300 group"
+    >
+      <div className="aspect-[4/3] bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-xl mb-6 overflow-hidden">
+        <img src={item.image} alt={item.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+      </div>
+      <h3 className="text-xl font-semibold text-white mb-3">{item.title}</h3>
+      <p className="text-slate-400 leading-relaxed">{item.description}</p>
+    </div>
+  ))}
+</div>
+```
+
+## MICRO-INTERACTION PATTERNS
+
+### Button Interactions
+```tsx
+// Premium button with multiple states
+<Button className="group relative bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 rounded-2xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 active:scale-95 overflow-hidden">
+  <span className="absolute inset-0 bg-white/20 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+  <span className="relative z-10 flex items-center gap-2">
+    Get Started
+    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
+  </span>
+</Button>
+
+// Magnetic button effect
+<Button className="group relative bg-white text-slate-900 hover:bg-slate-100 px-8 py-4 rounded-full font-semibold transition-all duration-300 hover:scale-105 hover:shadow-2xl active:scale-95">
+  <span className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-400 to-purple-400 opacity-0 group-hover:opacity-10 transition-opacity duration-300" />
+  <span className="relative">Explore</span>
+</Button>
+```
+
+### Input Field Enhancements
+```tsx
+<div className="group relative">
+  <Input 
+    className="w-full bg-slate-900/50 border-slate-700 focus:border-blue-500 text-white placeholder:text-slate-400 rounded-2xl px-6 py-4 text-lg transition-all duration-300 focus:bg-slate-900/80 focus:scale-105"
+    placeholder="Enter your email"
+  />
+  <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-blue-500/20 to-purple-500/20 opacity-0 group-focus-within:opacity-100 pointer-events-none transition-opacity duration-300" />
+</div>
+```
+
+### Loading & State Animations
+```tsx
+// Skeleton with shimmer
+<div className="animate-pulse">
+  <div className="h-8 bg-gradient-to-r from-slate-200 via-slate-50 to-slate-200 bg-[length:200%_100%] animate-shimmer rounded-lg mb-4" />
+</div>
+
+// Success state animation
+<div className="flex items-center gap-3 text-emerald-600">
+  <div className="w-6 h-6 rounded-full bg-emerald-100 flex items-center justify-center animate-bounce">
+    <Check className="w-4 h-4" />
+  </div>
+  <span className="font-semibold">Success!</span>
+</div>
+```
+
+## RESPONSIVE DESIGN EXCELLENCE
+
+### Mobile-First Approach
+```tsx
+// Progressive enhancement
+<div className="
+  px-4 py-8
+  sm:px-6 sm:py-12  
+  md:px-8 md:py-16
+  lg:px-12 lg:py-20
+  xl:px-16 xl:py-24
+">
+
+// Responsive grid systems
+<div className="
+  grid grid-cols-1 gap-6
+  md:grid-cols-2 md:gap-8
+  lg:grid-cols-3 lg:gap-10
+  xl:grid-cols-4 xl:gap-12
+">
+
+// Typography scaling
+<h1 className="
+  text-3xl font-bold
+  sm:text-4xl
+  md:text-5xl  
+  lg:text-6xl
+  xl:text-7xl
+  leading-tight
+">
+```
+
+## COMPONENT ARCHITECTURE
+
+### Advanced shadcn/ui Customization
+```tsx
+// Custom Button variants
+const buttonVariants = cva(
+  "inline-flex items-center justify-center rounded-2xl font-semibold transition-all duration-300 focus:outline-none focus:ring-4",
+  {
+    variants: {
+      variant: {
+        default: "bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700 shadow-lg hover:shadow-xl hover:scale-105",
+        ghost: "text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-full",
+        magnetic: "bg-white text-slate-900 hover:scale-105 hover:shadow-2xl active:scale-95"
+      },
+      size: {
+        default: "px-6 py-3",
+        sm: "px-4 py-2 text-sm",
+        lg: "px-8 py-4 text-lg",
+        xl: "px-12 py-6 text-xl"
+      }
+    }
+  }
+)
+
+// Premium Card component
+const Card = ({ className, children, ...props }) => (
+  <div
+    className={cn(
+      "group relative bg-white/5 backdrop-blur-lg rounded-3xl border border-white/10 hover:border-white/20 transition-all duration-500 hover:scale-[1.02] overflow-hidden",
+      className
+    )}
+    {...props}
+  >
+    <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+    <div className="relative z-10">{children}</div>
+  </div>
+)
+```
+
+## ANIMATION SYSTEM
+
+### Custom Tailwind Animations (Add to tailwind.config.ts)
+```javascript
+theme: {
+  extend: {
+    animation: {
+      'shimmer': 'shimmer 2s linear infinite',
+      'float': 'float 3s ease-in-out infinite',
+      'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+      'slide-up': 'slideUp 0.5s ease-out',
+      'fade-in': 'fadeIn 0.5s ease-out',
+    },
+    keyframes: {
+      shimmer: {
+        '0%': { backgroundPosition: '-200% 0' },
+        '100%': { backgroundPosition: '200% 0' }
+      },
+      float: {
+        '0%, 100%': { transform: 'translateY(0px)' },
+        '50%': { transform: 'translateY(-10px)' }
+      },
+      slideUp: {
+        '0%': { opacity: '0', transform: 'translateY(20px)' },
+        '100%': { opacity: '1', transform: 'translateY(0px)' }
+      },
+      fadeIn: {
+        '0%': { opacity: '0' },
+        '100%': { opacity: '1' }
+      }
+    }
+  }
+}
+```
+
+### Page Transition System
+```tsx
+// Page wrapper with entrance animation
+const PageWrapper = ({ children, className = "" }) => (
+  <div className={cn("animate-fade-in", className)}>
+    {children}
+  </div>
+)
+
+// Staggered list animations
+const AnimatedList = ({ items, className }) => (
+  <div className={className}>
+    {items.map((item, index) => (
+      <div
+        key={index}
+        className="animate-slide-up"
+        style={{ 
+          animationDelay: `${index * 100}ms`,
+          animationFillMode: 'both'
+        }}
+      >
+        {item}
+      </div>
+    ))}
+  </div>
+)
+```
+
+## QUALITY CHECKLIST
+
+Before completing any design, ensure:
+
+### Visual Excellence
+- [ ] Uses sophisticated color palette (not default grays)
+- [ ] Has proper visual hierarchy with varied typography scales
+- [ ] Includes subtle animations and micro-interactions
+- [ ] Features generous whitespace and purposeful spacing
+- [ ] Contains depth through shadows, gradients, or blur effects
+
+### User Experience  
+- [ ] All interactive elements have clear hover/active states
+- [ ] Mobile experience is thoughtfully designed (not just responsive)
+- [ ] Loading states and error states are handled elegantly
+- [ ] Accessibility standards are met (proper contrast, focus states)
+
+### Technical Quality
+- [ ] Uses semantic HTML structure
+- [ ] Implements proper TypeScript types
+- [ ] Follows consistent naming conventions
+- [ ] Optimizes for performance (efficient animations, lazy loading)
+
+### Brand Consistency
+- [ ] Maintains consistent color story throughout
+- [ ] Uses cohesive spacing system
+- [ ] Typography scale is harmonious
+- [ ] Component patterns are reusable
+
+## DEVELOPMENT COMMANDS
 
 ```bash
 npm run dev          # Start development server (port 8080)
@@ -86,252 +441,46 @@ npm run lint         # Run ESLint
 npm run preview      # Preview production build
 ```
 
-### Key Dependencies
+## ADVANCED PATTERNS
 
-**Core Libraries**:
-- React + React DOM (18.3.1)
-- React Router DOM (6.26.2)
-- TanStack React Query (5.56.2)
-- React Hook Form (7.53.0) + Zod (3.23.8)
-
-**UI & Styling**:
-- Tailwind CSS (3.4.11)
-- Radix UI primitives (@radix-ui/*)
-- Lucide React icons (0.462.0)
-- Class Variance Authority (CVA)
-- clsx for conditional classes
-
-**Utilities**:
-- date-fns for date manipulation
-- cmdk for command palette
-- next-themes for theme switching
-
-## Modern Design Guidelines
-
-### Design Philosophy
-Create interfaces that feel **premium, contemporary, and engaging**. Avoid generic, template-like appearances by focusing on:
-- **Visual hierarchy** through strategic use of contrast and spacing
-- **Micro-interactions** that delight users
-- **Sophisticated color combinations** that create emotional resonance
-- **Generous whitespace** for breathing room
-- **Subtle animations** that guide attention
-
-### Color Palette Strategy
-
-#### Primary Brand Colors (Choose one as your main brand color)
-- **Indigo**: `bg-indigo-600 hover:bg-indigo-700` - Professional, trustworthy
-- **Violet**: `bg-violet-600 hover:bg-violet-700` - Creative, innovative  
-- **Blue**: `bg-blue-600 hover:bg-blue-700` - Reliable, corporate
-- **Emerald**: `bg-emerald-600 hover:bg-emerald-700` - Growth, success
-- **Rose**: `bg-rose-600 hover:bg-rose-700` - Warm, personal
-- **Amber**: `bg-amber-600 hover:bg-amber-700` - Energetic, attention-grabbing
-
-#### Supporting Colors for Accents & States
-- **Success**: `text-emerald-600 bg-emerald-50 border-emerald-200`
-- **Warning**: `text-amber-600 bg-amber-50 border-amber-200`  
-- **Error**: `text-red-600 bg-red-50 border-red-200`
-- **Info**: `text-blue-600 bg-blue-50 border-blue-200`
-
-#### Neutral Palette (for backgrounds and text)
-- **Dark Mode**: `bg-slate-900 text-slate-100` (main), `bg-slate-800` (cards), `bg-slate-700` (hover)
-- **Light Mode**: `bg-slate-50 text-slate-900` (main), `bg-white` (cards), `bg-slate-100` (hover)
-- **Subtle Borders**: `border-slate-200` (light), `border-slate-700` (dark)
-
-### Layout & Spacing Principles
-
-#### Container Patterns
+### Form Design Excellence
 ```tsx
-// Full-width hero sections
-<section className="min-h-screen bg-gradient-to-br from-indigo-900 via-violet-900 to-purple-900">
-
-// Content containers  
-<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-// Card layouts with depth
-<div className="bg-white/10 backdrop-blur-lg rounded-2xl p-8 shadow-2xl border border-white/20">
-```
-
-#### Spacing Hierarchy
-- **Sections**: `py-16 lg:py-24` (large vertical spacing)
-- **Components**: `p-6 lg:p-8` (comfortable internal padding)  
-- **Elements**: `space-y-4 lg:space-y-6` (consistent vertical rhythm)
-- **Tight Groups**: `space-y-2` (related items)
-
-### Typography Scale
-```tsx
-// Headlines
-<h1 className="text-4xl lg:text-6xl font-bold tracking-tight">
-<h2 className="text-3xl lg:text-4xl font-semibold">  
-<h3 className="text-xl lg:text-2xl font-semibold">
-
-// Body Text
-<p className="text-lg text-slate-600 leading-relaxed">
-<p className="text-sm text-slate-500"> // Supporting text
-```
-
-### Visual Effects & Interactions
-
-#### Background Patterns
-```tsx
-// Gradient backgrounds
-className="bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-800"
-className="bg-gradient-to-r from-emerald-400 to-cyan-400"
-
-// Glass morphism
-className="bg-white/10 backdrop-blur-lg border border-white/20"
-
-// Subtle patterns
-className="bg-slate-50 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-50 via-white to-white"
-```
-
-#### Interactive States
-```tsx
-// Buttons with depth
-className="bg-indigo-600 hover:bg-indigo-700 active:scale-95 transition-all duration-150 shadow-lg hover:shadow-xl"
-
-// Cards with hover effects  
-className="group hover:scale-105 transition-all duration-300 hover:shadow-2xl"
-
-// Links with underline animation
-className="text-indigo-600 hover:text-indigo-700 underline decoration-2 underline-offset-4 decoration-indigo-300 hover:decoration-indigo-500 transition-colors"
-```
-
-#### Animations & Transitions
-```tsx
-// Smooth transitions
-className="transition-all duration-300 ease-out"
-
-// Staggered animations for lists
-className="animate-in slide-in-from-bottom-4 duration-700" style={{ animationDelay: `${index * 100}ms` }}
-
-// Subtle hover animations
-className="hover:translate-y-1 hover:scale-105 transition-transform duration-200"
-```
-
-### Component Styling Examples
-
-#### Hero Sections
-```tsx
-<div className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 overflow-hidden">
-  <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10" />
-  <div className="relative z-10 text-center max-w-4xl mx-auto px-4">
-    <h1 className="text-5xl lg:text-7xl font-bold text-white mb-8 tracking-tight">
-      Beautiful Headline
-    </h1>
-    <p className="text-xl text-slate-300 mb-12 max-w-2xl mx-auto leading-relaxed">
-      Compelling description that draws users in
-    </p>
-    <Button className="bg-white text-slate-900 hover:bg-slate-100 px-8 py-4 text-lg font-semibold rounded-xl shadow-2xl">
-      Get Started
-    </Button>
-  </div>
-</div>
-```
-
-#### Feature Cards
-```tsx
-<div className="grid md:grid-cols-3 gap-8">
-  {features.map((feature, index) => (
-    <div key={index} className="group bg-white rounded-2xl p-8 shadow-lg border border-slate-200 hover:shadow-2xl hover:border-indigo-200 transition-all duration-300">
-      <div className="w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-        <Icon className="w-6 h-6 text-white" />
+<form className="space-y-8 max-w-2xl mx-auto">
+  <div className="space-y-6">
+    <div className="group">
+      <Label className="text-sm font-semibold text-slate-700 mb-2 block">
+        Email Address
+      </Label>
+      <div className="relative">
+        <Input 
+          type="email"
+          className="w-full bg-slate-50 border-slate-200 focus:border-blue-500 focus:bg-white text-slate-900 rounded-xl px-4 py-3 transition-all duration-300 focus:scale-[1.02] focus:shadow-lg"
+          placeholder="you@company.com"
+        />
+        <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-blue-500/10 to-purple-500/10 opacity-0 group-focus-within:opacity-100 pointer-events-none transition-opacity duration-300" />
       </div>
-      <h3 className="text-xl font-semibold text-slate-900 mb-4">{feature.title}</h3>
-      <p className="text-slate-600 leading-relaxed">{feature.description}</p>
+    </div>
+  </div>
+  
+  <Button className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02]">
+    Get Started
+  </Button>
+</form>
+```
+
+### Data Visualization
+```tsx
+// Premium stat cards
+<div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+  {stats.map((stat, index) => (
+    <div key={index} className="group relative bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl p-8 border border-slate-700 hover:border-blue-500/50 transition-all duration-300">
+      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-t-2xl" />
+      <div className="text-4xl font-bold text-white mb-2">{stat.value}</div>
+      <div className="text-slate-400 font-medium">{stat.label}</div>
+      <div className="text-sm text-slate-500 mt-2">{stat.change}</div>
     </div>
   ))}
 </div>
 ```
 
-### Styling Guidelines
-
-1. **Avoid Generic Looks**: Don't use default grays everywhere. Choose a cohesive color story.
-2. **Layer Depth**: Use shadows, gradients, and transparency to create visual depth
-3. **Consistent Spacing**: Follow the spacing hierarchy religiously  
-4. **Interactive Feedback**: Every clickable element should have clear hover/active states
-5. **Mobile-First**: Always design for mobile, then enhance for desktop
-6. **Performance**: Use CSS transforms for animations, not layout properties
-
-### Adding New Features
-
-1. **New Pages**: Create in `src/pages/` and add route to `App.tsx`
-2. **Components**: Use shadcn/ui components from `src/components/ui/`
-3. **Custom Components**: Create in `src/components/`
-4. **Hooks**: Add to `src/hooks/`
-5. **Utilities**: Add to `src/lib/utils.ts`
-6. **API Calls**: Use TanStack Query for data fetching
-
-### Database Integration
-
-#### Supabase Integration
-If Supabase is used for backend services, the client configuration should be placed at:
-```
-src/integrations/supabase/client.ts
-```
-
-Use the official Supabase JavaScript client:
-```bash
-bun add @supabase/supabase-js
-```
-
-Example client setup:
-```typescript
-import { createClient } from '@supabase/supabase-js'
-
-const supabaseUrl = import.meta.env.VITE_SUPABASE_URL
-const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY
-
-export const supabase = createClient(supabaseUrl, supabaseAnonKey)
-```
-
-### Environment Variables Security Warning
-
-⚠️ **CRITICAL SECURITY NOTICE**: This is a **client-side application**. All environment variables with the `VITE_` prefix will be **bundled and exposed** in the final build. 
-
-**Never include sensitive data in environment variables:**
-- API secrets
-- Private keys  
-- Database passwords
-- Service account credentials
-
-**Only use environment variables for:**
-- Public API URLs
-- Public configuration values
-- Feature flags
-- Public keys (like Supabase anon keys)
-
-All sensitive operations should be handled server-side or through secure authentication flows.
-
-### File Naming Conventions
-
-- **Components**: PascalCase (e.g., `MyComponent.tsx`)
-- **Pages**: PascalCase (e.g., `Dashboard.tsx`)
-- **Hooks**: camelCase starting with 'use' (e.g., `useCustomHook.ts`)
-- **Utilities**: camelCase (e.g., `formatDate.ts`)
-
-### Import Path Resolution
-
-Use the `@` alias for cleaner imports:
-```tsx
-import { Button } from "@/components/ui/button"
-import { cn } from "@/lib/utils"
-```
-
-### Current State
-
-The project currently has:
-- A simple home page at `/` displaying "hello"
-- A 404 page for unmatched routes
-- Complete shadcn/ui component library
-- Configured development environment
-
-### Next Steps for Development
-
-1. Replace the placeholder content in `src/pages/Index.tsx` with modern, visually compelling design
-2. Choose a primary brand color and implement consistently
-3. Add new pages and routes with sophisticated layouts
-4. Implement your application logic with attention to user experience
-5. Add API integration using TanStack Query
-6. Customize the theme in `tailwind.config.ts` to match your brand
-
-**Remember**: Every component should feel intentional and premium. Use the color guidelines, spacing principles, and interaction patterns above to create interfaces that users love to interact with.
+Remember: **Every component should feel intentionally crafted, not template-generated.** Focus on creating emotional connections through thoughtful design choices, sophisticated interactions, and premium aesthetics.
