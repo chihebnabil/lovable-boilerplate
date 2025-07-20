@@ -120,7 +120,7 @@ All sensitive operations should be handled server-side or through secure authent
 - **Unique Visual Identity**: design should feel custom-crafted, never template-like
 
 ### Visual Quality Standards
-❌ **NEVER CREATE**:
+**NEVER CREATE**:
 - Generic card grids with default shadows
 - Plain white backgrounds with black text
 - Basic hover states (simple color changes)
@@ -131,7 +131,7 @@ All sensitive operations should be handled server-side or through secure authent
 - Identical repeated patterns without variation
 - Static, lifeless interfaces
 
-✅ **ALWAYS CREATE**:
+**ALWAYS CREATE**:
 - Dynamic, engaging compositions with visual flow
 - Rich color palettes with gradients and depth
 - Sophisticated micro-interactions
@@ -162,10 +162,51 @@ bg-slate-900 text-white          // 21:1 ratio ✅
 bg-slate-800 text-slate-100      // 15.8:1 ratio ✅
 bg-blue-900 text-blue-50         // 18.1:1 ratio ✅
 
+// Transparent/glass buttons on dark backgrounds
+border-white/50 text-white       // High contrast ✅
+bg-white/10 text-white           // 21:1 ratio ✅ 
+hover:bg-white hover:text-slate-900  // 21:1 ratio ✅
+
 // Never use these combinations
 bg-white text-slate-400          // 2.9:1 ratio ❌
 bg-slate-100 text-slate-500      // 3.4:1 ratio ❌
 bg-blue-500 text-blue-200        // 2.1:1 ratio ❌
+border-white/30 text-white       // Poor visibility ❌
+bg-white/10 text-slate-400       // Poor contrast ❌
+```
+
+### Button Contrast Requirements
+**CRITICAL**: All buttons must maintain proper contrast in ALL states:
+
+✅ **Safe Button Patterns**:
+```tsx
+// Primary buttons - always high contrast
+bg-blue-600 text-white           // 21:1 ratio ✅
+bg-gradient-to-r from-blue-600 to-purple-600 text-white  // ✅
+
+// Outline buttons on dark backgrounds
+border-white/50 text-white hover:bg-white hover:text-slate-900  // ✅
+border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white  // ✅
+
+// Ghost buttons
+text-white hover:bg-white/10     // ✅ (maintains white text)
+text-slate-900 hover:bg-slate-100 // ✅ (maintains dark text)
+
+// Disabled state with proper contrast
+bg-slate-200 text-slate-500 cursor-not-allowed  // 3.4:1 ratio ✅ for disabled
+bg-slate-700 text-slate-400 cursor-not-allowed  // 3.1:1 ratio ✅ for disabled
+
+// Loading state
+bg-blue-600 text-white           // Always maintain primary contrast ✅
+```
+
+❌ **NEVER Use These Patterns**:
+```tsx
+// Poor contrast combinations
+border-white/30 text-white       // Border too faint ❌
+hover:bg-white/10 text-slate-400 // Poor hover contrast ❌
+bg-slate-200 text-slate-400      // Insufficient contrast ❌
+text-white on bg-white/20        // White on light = invisible ❌
 ```
 
 ## ADVANCED COLOR SYSTEMS
