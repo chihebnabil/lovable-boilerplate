@@ -106,7 +106,7 @@ npm run preview      # Preview production build
 - cmdk for command palette
 - next-themes for theme switching
 
-## 🎨 Modern Design Guidelines
+## Modern Design Guidelines
 
 ### Design Philosophy
 Create interfaces that feel **premium, contemporary, and engaging**. Avoid generic, template-like appearances by focusing on:
@@ -289,16 +289,16 @@ export const supabase = createClient(supabaseUrl, supabaseAnonKey)
 ⚠️ **CRITICAL SECURITY NOTICE**: This is a **client-side application**. All environment variables with the `VITE_` prefix will be **bundled and exposed** in the final build. 
 
 **Never include sensitive data in environment variables:**
-- ❌ API secrets
-- ❌ Private keys  
-- ❌ Database passwords
-- ❌ Service account credentials
+- API secrets
+- Private keys  
+- Database passwords
+- Service account credentials
 
 **Only use environment variables for:**
-- ✅ Public API URLs
-- ✅ Public configuration values
-- ✅ Feature flags
-- ✅ Public keys (like Supabase anon keys)
+- Public API URLs
+- Public configuration values
+- Feature flags
+- Public keys (like Supabase anon keys)
 
 All sensitive operations should be handled server-side or through secure authentication flows.
 
