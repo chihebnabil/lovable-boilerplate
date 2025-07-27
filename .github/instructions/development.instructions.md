@@ -1,5 +1,5 @@
 ---
-applyTo: '**'
+applyTo: '{package.json,vite.config.ts,tsconfig.json,tailwind.config.ts,src/**}'
 ---
 # Development Workflow & Commands
 

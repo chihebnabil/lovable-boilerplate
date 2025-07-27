@@ -1,5 +1,5 @@
 ---
-applyTo: '**'
+applyTo: 'src/**/*.{tsx,css}'
 ---
 # Design System Guidelines
 

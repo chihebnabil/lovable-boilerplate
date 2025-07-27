@@ -1,5 +1,5 @@
 ---
-applyTo: '**'
+applyTo: 'src/**/*.{tsx,ts}'
 ---
 # Code Architecture & Reusability Guidelines
 

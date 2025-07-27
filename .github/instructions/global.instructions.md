@@ -33,6 +33,10 @@ This project uses a modular instruction system. For comprehensive guidance, see:
 - **🏗️ [Architecture Guidelines](./architecture.instructions.md)** - Component organization, reusability patterns, custom hooks, and code structure
 - **🎨 [Design Guidelines](./design.instructions.md)** - Visual design system, industry-specific styling, accessibility, and premium UI patterns
 - **⚙️ [Development Workflow](./development.instructions.md)** - Commands, configuration, testing, and quality standards
+- **🧩 [Component Guidelines](./components.instructions.md)** - UI, common, and feature component patterns
+- **🪝 [Hooks Guidelines](./hooks.instructions.md)** - Custom hook patterns for data, forms, and UI state
+- **📄 [Page Guidelines](./pages.instructions.md)** - Page composition and organization rules
+- **🛠️ [Library Guidelines](./lib.instructions.md)** - Utilities, types, constants, and service layer patterns
 - **✅ [Quality Checklist](./quality.instructions.md)** - Code quality, design standards, and never-ship rules
 
 ## Tech Stack Overview
