@@ -7,6 +7,27 @@ applyTo: '**'
 
 This is a React TypeScript project built with Vite, using shadcn/ui components and Tailwind CSS. Create **world-class, premium designs** that feel modern, sophisticated, and engaging - never generic or template-like.
 
+## Landing Page Design Guidelines
+Before generating the landing page, check the following:
+
+What is the primary CTA (call-to-action)?
+(e.g. submit an idea, request a demo, sign up)
+
+Should the hero section include a form or another interactive element?
+(e.g. submission form, email input, demo request)
+
+What is the core value proposition or message?
+(e.g. competitor analysis, product validation, AI-powered research)
+
+What visual tone should the landing page have?
+(e.g. clean and professional, playful and bold, minimalistic)
+
+Any preferred colors or gradients?
+(e.g. purple/blue gradient, dark theme, pastel tones)
+
+Should the design include subtle animations or stay static?
+Do you want to follow an indie maker aesthetic or a more corporate look?
+
 ### Project Overview
 - **Framework**: React 18.3.1 with TypeScript
 - **Build Tool**: Vite 5.4.1
@@ -74,6 +95,7 @@ npm i @supabase/supabase-js
 - **Breathing Room**: Generous whitespace creates luxury feel
 - **Cohesive Color Story**: Never use random colors - every choice is intentional
 - **Unique Visual Identity**: Design should feel custom-crafted, never template-like
+- **Industry-Appropriate Design**: Adapt colors, typography, and visual style to match the target industry or niche
 
 ### Visual Quality Standards
 **NEVER CREATE**:
@@ -93,6 +115,128 @@ npm i @supabase/supabase-js
 - Varied spacing that creates rhythm
 - High contrast, accessible text combinations
 - Interactive, responsive designs with personality
+
+## INDUSTRY-SPECIFIC DESIGN ADAPTATION
+
+### Design Philosophy by Industry
+**Always adapt visual identity, color palette, and tone to match the target industry or niche:**
+
+### Technology & SaaS
+- **Colors**: Deep blues, purples, electric accents (blue-600, purple-600, cyan-500)
+- **Typography**: Modern, clean sans-serif with geometric elements
+- **Visual Style**: Minimal, data-driven, futuristic gradients
+- **Animation**: Smooth, precise micro-interactions
+```tsx
+bg-gradient-to-br from-blue-950 via-purple-950 to-slate-950
+text-blue-400, text-purple-400, text-cyan-400
+```
+
+### Finance & Banking
+- **Colors**: Navy, gold, emerald accents (slate-900, emerald-600, amber-500)
+- **Typography**: Professional serif for headlines, clean sans-serif for body
+- **Visual Style**: Trust-building, sophisticated, minimal
+- **Animation**: Subtle, professional hover states
+```tsx
+bg-gradient-to-br from-slate-900 via-slate-800 to-emerald-950
+text-emerald-400, text-amber-400, text-slate-200
+```
+
+### Healthcare & Medical
+- **Colors**: Calming blues, soft greens, clinical whites (blue-500, teal-500, slate-50)
+- **Typography**: Clean, readable sans-serif throughout
+- **Visual Style**: Clean, accessible, trustworthy
+- **Animation**: Gentle, non-distracting transitions
+```tsx
+bg-gradient-to-br from-blue-50 via-teal-50 to-slate-50
+text-blue-700, text-teal-700, text-slate-800
+```
+
+### Creative & Design
+- **Colors**: Vibrant, artistic palettes (pink-500, orange-500, violet-600)
+- **Typography**: Creative font pairing, artistic hierarchy
+- **Visual Style**: Bold, expressive, portfolio-focused
+- **Animation**: Playful, engaging micro-interactions
+```tsx
+bg-gradient-to-br from-pink-500 via-purple-600 to-orange-500
+text-pink-200, text-purple-200, text-orange-200
+```
+
+### E-commerce & Retail
+- **Colors**: Warm, inviting tones (rose-500, amber-500, slate-800)
+- **Typography**: Friendly, approachable sans-serif
+- **Visual Style**: Product-focused, conversion-optimized
+- **Animation**: Shopping-focused interactions (cart, wishlist)
+```tsx
+bg-gradient-to-br from-rose-50 via-amber-50 to-slate-50
+text-rose-700, text-amber-700, text-slate-800
+```
+
+### Education & Learning
+- **Colors**: Fresh, energetic palettes (blue-500, green-500, yellow-400)
+- **Typography**: Clear, student-friendly fonts
+- **Visual Style**: Approachable, encouraging, progress-focused
+- **Animation**: Learning-focused progressions and celebrations
+```tsx
+bg-gradient-to-br from-blue-500 via-green-500 to-yellow-400
+text-blue-800, text-green-800, text-yellow-800
+```
+
+### Real Estate & Property
+- **Colors**: Earthy, luxury tones (slate-700, amber-600, emerald-700)
+- **Typography**: Elegant serif for luxury properties, clean sans-serif for modern
+- **Visual Style**: Property showcase-focused, luxury aesthetic
+- **Animation**: Property tour-inspired interactions
+```tsx
+bg-gradient-to-br from-slate-800 via-amber-900 to-emerald-900
+text-amber-200, text-emerald-200, text-slate-200
+```
+
+### Food & Restaurant
+- **Colors**: Appetite-stimulating colors (red-600, orange-500, yellow-500)
+- **Typography**: Warm, inviting fonts
+- **Visual Style**: Food photography-focused, sensory appeal
+- **Animation**: Menu and ordering flow optimizations
+```tsx
+bg-gradient-to-br from-red-900 via-orange-900 to-yellow-900
+text-red-200, text-orange-200, text-yellow-200
+```
+
+### Fitness & Wellness
+- **Colors**: Energetic, motivational palettes (green-500, blue-500, orange-500)
+- **Typography**: Strong, motivational fonts
+- **Visual Style**: Progress-focused, energetic, health-conscious
+- **Animation**: Activity and progress-based interactions
+```tsx
+bg-gradient-to-br from-green-600 via-blue-600 to-orange-600
+text-green-200, text-blue-200, text-orange-200
+```
+
+### Legal & Professional Services
+- **Colors**: Authoritative, trustworthy tones (slate-800, blue-800, amber-600)
+- **Typography**: Professional serif for trust, clean sans-serif for readability
+- **Visual Style**: Credible, professional, document-focused
+- **Animation**: Minimal, professional hover states only
+```tsx
+bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800
+text-blue-200, text-amber-200, text-slate-200
+```
+
+### Travel & Hospitality
+- **Colors**: Wanderlust-inspiring palettes (sky-500, teal-500, sunset gradients)
+- **Typography**: Adventure-inspiring, wanderlust fonts
+- **Visual Style**: Destination-focused, experiential imagery
+- **Animation**: Journey and exploration-themed interactions
+```tsx
+bg-gradient-to-br from-sky-500 via-teal-500 to-purple-600
+text-sky-200, text-teal-200, text-purple-200
+```
+
+### ALWAYS ASK YOURSELF:
+1. What industry/niche is this for?
+2. What emotions should this evoke in the target audience?
+3. What visual expectations does this industry have?
+4. How can the color palette reinforce the brand message?
+5. What level of formality/playfulness is appropriate?
 
 ## ACCESSIBILITY & CONTRAST REQUIREMENTS (WCAG 2.1 AA)
 
