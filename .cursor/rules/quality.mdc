@@ -1,0 +1,91 @@
+---
+description: Code quality checklist and anti-patterns to avoid before shipping
+globs: []
+alwaysApply: false
+---
+
+# Quality Checklist Rules
+
+## Pre-Ship Quality Gates
+
+### ✅ Code Architecture Quality
+- [ ] **No monolithic components** - Each component under 300 lines with single responsibility
+- [ ] **Logic extraction** - Reusable logic moved to custom hooks, not duplicated
+- [ ] **Type safety** - Shared interfaces defined in `lib/types.ts` and reused
+- [ ] **Service layer** - API calls abstracted to service functions, not inline
+- [ ] **Proper imports** - Using path aliases (@/) and organized import groups
+- [ ] **Validation schemas** - Zod schemas shared and reused across components
+- [ ] **Component composition** - Complex UI built from smaller, focused components
+
+### ✅ Design Quality  
+- [ ] Uses sophisticated color palette (not default grays)
+- [ ] Has proper visual hierarchy with varied typography scales
+- [ ] Includes subtle animations and micro-interactions
+- [ ] Features generous whitespace and purposeful spacing
+- [ ] All interactive elements have clear hover/active states
+- [ ] **Accessibility standards are met (proper contrast, focus states)**
+- [ ] Mobile experience is thoughtfully designed
+- [ ] Maintains consistent color story throughout
+
+### ✅ Essential Commands Check
+```bash
+npm run lint         # MUST pass before shipping
+npm run build        # MUST succeed without errors
+```
+
+### ❌ NEVER Ship Code That:
+- Contains components over 300 lines mixing multiple concerns
+- Has duplicated logic that could be extracted to hooks
+- Uses inline API calls instead of service layer
+- Lacks proper TypeScript interfaces
+- Has accessibility contrast violations  
+- Contains copy-pasted code blocks
+- Mixes business logic with presentation layer
+- Has console errors or warnings
+- Fails ESLint checks
+
+### ✅ Development Workflow
+1. Run `npm run dev` to start development
+2. Follow component size limits (300 lines max)
+3. Extract reusable logic to hooks
+4. Test responsive design on mobile/desktop
+5. Verify accessibility contrast ratios
+6. Run `npm run lint` and fix all issues
+7. Ensure no console errors before shipping
+
+## Common Anti-Patterns to Avoid
+
+### Component Anti-Patterns
+```tsx
+// ❌ DON'T: Monolithic component
+const BadDashboard = () => {
+  // 400+ lines of mixed concerns
+  const [users, setUsers] = useState([])
+  const [products, setProducts] = useState([])
+  // ... massive component
+}
+
+// ✅ DO: Composition pattern
+const GoodDashboard = () => (
+  <PageLayout>
+    <DashboardHeader />
+    <DashboardMetrics />
+    <DashboardCharts />
+  </PageLayout>
+)
+```
+
+### Data Fetching Anti-Patterns
+```tsx
+// ❌ DON'T: Inline API calls
+const BadComponent = () => {
+  useEffect(() => {
+    fetch('/api/users').then(res => res.json()).then(setUsers)
+  }, [])
+}
+
+// ✅ DO: Service layer + custom hooks
+const GoodComponent = () => {
+  const { data: users } = useUsers()
+}
+```

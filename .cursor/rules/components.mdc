@@ -1,0 +1,143 @@
+---
+description: Component development patterns and composition rules
+globs: ["src/components/**/*.{tsx,ts}", "src/pages/**/*.{tsx,ts}"]
+alwaysApply: false
+---
+
+# Component Development Rules
+
+## Component Patterns
+
+### ✅ GOOD Component Structure
+```tsx
+// Single responsibility, 20-80 lines
+interface UserCardProps {
+  user: User
+  onEdit: (id: string) => void
+  className?: string
+}
+
+export const UserCard = ({ user, onEdit, className }: UserCardProps) => {
+  return (
+    <Card className={cn("p-4", className)}>
+      <Avatar src={user.avatar} />
+      <div>
+        <h3 className="font-semibold">{user.name}</h3>
+        <p className="text-muted-foreground">{user.email}</p>
+        <Button onClick={() => onEdit(user.id)}>Edit</Button>
+      </div>
+    </Card>
+  )
+}
+```
+
+### ❌ AVOID: Monolithic Components
+```tsx
+// DON'T: 300+ lines mixing concerns
+const UserManagement = () => {
+  // Massive component with multiple responsibilities
+}
+```
+
+### Component Composition Pattern
+```tsx
+// ✅ Build complex UI from smaller components
+const Dashboard = () => (
+  <PageLayout>
+    <DashboardHeader />
+    <DashboardMetrics />
+    <DashboardCharts />
+    <DashboardActivity />
+  </PageLayout>
+)
+```
+
+## UI Component Rules
+
+### shadcn/ui Components
+- **NEVER** modify files in `src/components/ui/` directly
+- **EXTEND** by creating wrappers in `src/components/common/`
+- **COMPOSE** multiple ui components to build features
+
+### Form Components
+```tsx
+// Use React Hook Form + Zod pattern
+export const UserForm = ({ onSubmit, initialData }: UserFormProps) => {
+  const form = useForm<UserFormData>({
+    resolver: zodResolver(userSchema),
+    defaultValues: initialData
+  })
+
+  return (
+    <Form {...form}>
+      <form onSubmit={form.handleSubmit(onSubmit)}>
+        <FormField
+          control={form.control}
+          name="name"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Name</FormLabel>
+              <FormControl>
+                <Input {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+      </form>
+    </Form>
+  )
+}
+```
+
+## Page Component Rules
+
+### Pages = Composition Only
+```tsx
+// ✅ PERFECT: Thin orchestration layer (10-30 lines max)
+const DashboardPage = () => {
+  const { data: user, isLoading } = useCurrentUser()
+  
+  if (isLoading) return <PageSkeleton />
+  
+  return (
+    <PageLayout>
+      <DashboardHeader user={user} />
+      <DashboardMetrics />
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <DashboardCharts />
+        <DashboardActivity />
+      </div>
+    </PageLayout>
+  )
+}
+```
+
+### ❌ NEVER in Pages
+- Business logic (extract to hooks)
+- API calls (use service layer)
+- Complex state management
+- Inline event handlers
+
+## Reusable Component Patterns
+
+### Compound Components
+```tsx
+const DataTable = ({ children }) => (
+  <div className="border rounded-lg overflow-hidden">{children}</div>
+)
+
+const DataTableHeader = ({ children }) => (
+  <div className="bg-muted p-4 border-b">{children}</div>
+)
+
+// Usage
+<DataTable>
+  <DataTableHeader>
+    <h3>Users</h3>
+  </DataTableHeader>
+  <DataTableBody>
+    {users.map(user => <UserRow key={user.id} user={user} />)}
+  </DataTableBody>
+</DataTable>
+```

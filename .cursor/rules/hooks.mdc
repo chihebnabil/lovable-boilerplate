@@ -1,0 +1,108 @@
+---
+description: Custom hooks patterns for data fetching, forms, and UI state management
+globs: ["src/hooks/**/*.{ts,tsx}"]
+alwaysApply: false
+---
+
+# Custom Hooks Rules
+
+## Hook Organization Patterns
+
+### Data Fetching Hooks
+```tsx
+// hooks/useUsers.ts
+export const useUsers = () => {
+  return useQuery({
+    queryKey: ['users'],
+    queryFn: () => userService.getAllUsers(),
+    staleTime: 5 * 60 * 1000, // 5 minutes
+  })
+}
+
+export const useUser = (id: string) => {
+  return useQuery({
+    queryKey: ['users', id],
+    queryFn: () => userService.getUser(id),
+    enabled: !!id,
+  })
+}
+```
+
+### Form Hooks
+```tsx
+// hooks/useUserForm.ts
+export const useUserForm = (initialData?: Partial<User>) => {
+  const form = useForm<UserFormData>({
+    resolver: zodResolver(userSchema),
+    defaultValues: initialData || {},
+  })
+
+  const { mutate: saveUser, isPending } = useMutation({
+    mutationFn: userService.updateUser,
+    onSuccess: () => toast.success('User saved'),
+    onError: (error) => toast.error(error.message),
+  })
+
+  return { form, saveUser, isPending }
+}
+```
+
+### UI State Hooks
+```tsx
+// hooks/useDisclosure.ts
+export const useDisclosure = (initialState = false) => {
+  const [isOpen, setIsOpen] = useState(initialState)
+  
+  const open = useCallback(() => setIsOpen(true), [])
+  const close = useCallback(() => setIsOpen(false), [])
+  const toggle = useCallback(() => setIsOpen(prev => !prev), [])
+  
+  return { isOpen, open, close, toggle }
+}
+```
+
+### Local Storage Hook
+```tsx
+// hooks/useLocalStorage.ts
+export const useLocalStorage = <T>(key: string, initialValue: T) => {
+  const [storedValue, setStoredValue] = useState<T>(() => {
+    try {
+      const item = window.localStorage.getItem(key)
+      return item ? JSON.parse(item) : initialValue
+    } catch (error) {
+      return initialValue
+    }
+  })
+
+  const setValue = useCallback((value: T | ((val: T) => T)) => {
+    try {
+      const valueToStore = value instanceof Function ? value(storedValue) : value
+      setStoredValue(valueToStore)
+      window.localStorage.setItem(key, JSON.stringify(valueToStore))
+    } catch (error) {
+      console.error(error)
+    }
+  }, [key, storedValue])
+
+  return [storedValue, setValue] as const
+}
+```
+
+## Hook Naming Conventions
+- **Data**: `useUsers`, `useUser`, `useProducts`
+- **Forms**: `useUserForm`, `useProductForm`
+- **UI State**: `useDisclosure`, `useToggle`, `useLocalStorage`
+- **Business Logic**: `useAuth`, `useCart`, `useNotifications`
+
+## Hook Extraction Rules
+
+### Extract Logic When:
+- Same logic used in 2+ components
+- Component exceeds 100 lines due to logic
+- Complex state management patterns
+- API interaction patterns
+
+### Don't Extract When:
+- Logic is component-specific
+- Only used once
+- Simple useState patterns

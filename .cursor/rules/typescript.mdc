@@ -1,0 +1,185 @@
+---
+description: TypeScript type definitions and utility patterns for the application
+globs: ["src/lib/types.ts", "src/lib/utils.ts", "src/lib/constants.ts"]
+alwaysApply: false
+---
+
+# TypeScript & Utilities Rules
+
+## Shared Type Definitions
+
+### Core Application Types
+```tsx
+// lib/types.ts - Always define shared types here
+export interface User {
+  id: string
+  email: string
+  name: string
+  avatar?: string
+  role: UserRole
+  createdAt: string
+  updatedAt: string
+}
+
+export interface ApiResponse<T> {
+  data: T
+  message: string
+  success: boolean
+  meta?: {
+    total: number
+    page: number
+    limit: number
+  }
+}
+
+export type UserRole = 'admin' | 'user' | 'guest'
+export type Theme = 'light' | 'dark' | 'system'
+export type LoadingState = 'idle' | 'loading' | 'success' | 'error'
+```
+
+### Form Type Patterns
+```tsx
+// Derive form types from Zod schemas
+export type UserFormData = z.infer<typeof userSchema>
+export type CreateUserData = z.infer<typeof createUserSchema>
+export type UpdateUserData = z.infer<typeof updateUserSchema>
+
+// Component prop types
+export interface UserCardProps {
+  user: User
+  onEdit: (id: string) => void
+  onDelete: (id: string) => void
+  className?: string
+}
+```
+
+## Utility Functions
+
+### Keep Existing cn Function
+```tsx
+// lib/utils.ts - NEVER modify this function
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs))
+}
+```
+
+### Common Utility Patterns
+```tsx
+// Date formatting
+export function formatDate(date: Date | string, format?: string): string {
+  return new Intl.DateTimeFormat('en-US', {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+    ...format
+  }).format(new Date(date))
+}
+
+// Debounce utility
+export function debounce<T extends (...args: any[]) => any>(
+  func: T,
+  wait: number
+): (...args: Parameters<T>) => void {
+  let timeout: NodeJS.Timeout
+  return (...args: Parameters<T>) => {
+    clearTimeout(timeout)
+    timeout = setTimeout(() => func(...args), wait)
+  }
+}
+
+// Sleep utility for demos/testing
+export const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms))
+```
+
+## Constants Organization
+
+### API and Route Constants
+```tsx
+// lib/constants.ts
+export const API_ENDPOINTS = {
+  USERS: '/api/users',
+  PRODUCTS: '/api/products',
+  AUTH: '/api/auth',
+} as const
+
+export const QUERY_KEYS = {
+  USERS: 'users',
+  PRODUCTS: 'products',
+  USER_PROFILE: 'user-profile',
+} as const
+
+export const ROUTES = {
+  HOME: '/',
+  DASHBOARD: '/dashboard',
+  USERS: '/users',
+  PROFILE: '/profile',
+} as const
+```
+
+### Configuration Constants
+```tsx
+export const APP_CONFIG = {
+  APP_NAME: 'My App',
+  API_BASE_URL: import.meta.env.VITE_API_URL || 'http://localhost:3000',
+  ITEMS_PER_PAGE: 10,
+  MAX_FILE_SIZE: 5 * 1024 * 1024, // 5MB
+} as const
+
+export const BREAKPOINTS = {
+  sm: '640px',
+  md: '768px',
+  lg: '1024px',
+  xl: '1280px',
+  '2xl': '1536px',
+} as const
+```
+
+## TypeScript Best Practices
+
+### Generic Patterns
+```tsx
+// API response wrapper
+export interface PaginatedResponse<T> {
+  data: T[]
+  meta: {
+    total: number
+    page: number
+    limit: number
+    totalPages: number
+  }
+}
+
+// Generic hook return type
+export interface UseQueryResult<T> {
+  data: T | undefined
+  isLoading: boolean
+  error: Error | null
+  refetch: () => void
+}
+```
+
+### Environment Variables Typing
+```tsx
+// vite-env.d.ts additions
+interface ImportMetaEnv {
+  readonly VITE_API_URL: string
+  readonly VITE_APP_NAME: string
+  // Add more environment variables as needed
+}
+
+interface ImportMeta {
+  readonly env: ImportMetaEnv
+}
+```
+
+## ❌ Type Anti-Patterns
+- Using `any` type
+- Inline interface definitions in components
+- Not leveraging Zod for runtime validation
+- Duplicate type definitions across files
+
+## ✅ Type Best Practices
+- Define shared types in `lib/types.ts`
+- Use Zod schemas for validation and type inference
+- Leverage TypeScript strict mode
+- Use proper generic constraints
