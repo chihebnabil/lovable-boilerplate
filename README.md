@@ -8,11 +8,9 @@
 [![shadcn/ui](https://img.shields.io/badge/shadcn%2Fui-components-black.svg)](https://ui.shadcn.com/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4.11-cyan.svg)](https://tailwindcss.com/)
 
-## Quick Start
-
-### One-Click Setup with Bolt
+## One-Click Setup
 [![Edit with Bolt](https://img.shields.io/badge/Edit%20with-Bolt-4285F4?style=for-the-badge&logo=stackblitz&logoColor=white)](https://bolt.new/~/github.com/chihebnabil/lovable-boilerplate)
-
+[![Edit with Replit](https://img.shields.io/badge/Edit%20with-Replit-4285F4?style=for-the-badge&logo=replit&logoColor=white)](https://replit.com/@ChihebNabil/lovable-boilerplate)
 ## What is this?
 
 This boilerplate **reverse-engineers** the magic behind [Lovable's](https://lovable.dev) no-code AI app builder into a traditional React codebase that developers can understand, modify, and extend. It bridges the gap between no-code AI generation and developer control.
