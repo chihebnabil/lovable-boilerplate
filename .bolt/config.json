@@ -1,0 +1,33 @@
+{
+  "name": "Lovable Boilerplate",
+  "description": "Reverse-engineered Lovable AI app builder turned into a developer-friendly React boilerplate with comprehensive AI coding assistant instructions.",
+  "type": "react-vite",
+  "framework": "react",
+  "language": "typescript",
+  "template": "vite-react-ts",
+  "packageManager": "npm",
+  "nodeVersion": "18",
+  "autoInstall": true,
+  "autoStart": true,
+  "startCommand": "npm run dev",
+  "buildCommand": "npm run build",
+  "devServer": {
+    "port": 8080,
+    "host": "0.0.0.0"
+  },
+  "features": {
+    "shadcn": true,
+    "tailwind": true,
+    "typescript": true,
+    "reactRouter": true,
+    "reactQuery": true,
+    "reactHookForm": true,
+    "zod": true
+  },
+  "ai": {
+    "instructionsPath": ".github/instructions/global.instructions.md",
+    "enableCodeGeneration": true,
+    "enableDesignSystem": true,
+    "designSystemPath": ".github/instructions/design.instructions.md"
+  }
+}
