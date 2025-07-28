@@ -1,0 +1,62 @@
+{
+  "editor": {
+    "theme": "dark",
+    "fontSize": 14,
+    "tabSize": 2,
+    "insertSpaces": true,
+    "wordWrap": "on",
+    "minimap": {
+      "enabled": true
+    },
+    "formatOnSave": true,
+    "formatOnPaste": true
+  },
+  "files": {
+    "associations": {
+      "*.tsx": "typescriptreact",
+      "*.ts": "typescript",
+      "*.css": "css",
+      "*.json": "json",
+      "*.md": "markdown"
+    },
+    "exclude": {
+      "**/node_modules": true,
+      "**/dist": true,
+      "**/.git": true,
+      "**/coverage": true,
+      "**/.nyc_output": true
+    }
+  },
+  "terminal": {
+    "defaultProfile": "bash",
+    "shell": "/bin/bash"
+  },
+  "extensions": {
+    "recommendations": [
+      "bradlc.vscode-tailwindcss",
+      "esbenp.prettier-vscode",
+      "ms-vscode.vscode-typescript-next",
+      "formulahendry.auto-rename-tag",
+      "ms-vscode.vscode-json"
+    ]
+  },
+  "typescript": {
+    "preferences": {
+      "includePackageJsonAutoImports": "auto"
+    }
+  },
+  "emmet": {
+    "includeLanguages": {
+      "typescript": "html",
+      "typescriptreact": "html"
+    }
+  },
+  "tailwindCSS": {
+    "experimental": {
+      "classRegex": [
+        ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
+        ["cx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
+      ]
+    }
+  }
+}

@@ -8,6 +8,11 @@
 [![shadcn/ui](https://img.shields.io/badge/shadcn%2Fui-components-black.svg)](https://ui.shadcn.com/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4.11-cyan.svg)](https://tailwindcss.com/)
 
+## Quick Start
+
+### One-Click Setup with Bolt
+[![Edit with Bolt](https://img.shields.io/badge/Edit%20with-Bolt-4285F4?style=for-the-badge&logo=stackblitz&logoColor=white)](https://bolt.new/~/github.com/chihebnabil/lovable-boilerplate)
+
 ## What is this?
 
 This boilerplate **reverse-engineers** the magic behind [Lovable's](https://lovable.dev) no-code AI app builder into a traditional React codebase that developers can understand, modify, and extend. It bridges the gap between no-code AI generation and developer control.
@@ -28,7 +33,7 @@ This boilerplate **reverse-engineers** the magic behind [Lovable's](https://lova
 | **React Hook Form** | Form Handling | 7.53.0 |
 | **Zod** | Schema Validation | 3.23.8 |
 
-## Quick Start
+
 
 ### Prerequisites
 - Node.js 18+ or Bun
