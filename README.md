@@ -17,7 +17,11 @@
 
 This boilerplate **reverse-engineers** the magic behind [Lovable's](https://lovable.dev) no-code AI app builder into a traditional React codebase that developers can understand, modify, and extend. It bridges the gap between no-code AI generation and developer control.
 
-> **💡 Already have a Lovable app?** Convert it to Next.js with [**NextLovable.com**](https://nextlovable.com/) for production-ready performance and SEO.
+> **💡 Built something with Lovable or using this boilerplate?**  
+> Upgrade to a fullstack Next.js app in minutes with [**NextLovable.com**](https://nextlovable.com/)  
+> Get production-ready performance, better SEO, and full control.
+
+
 
 ## Tech Stack
 
