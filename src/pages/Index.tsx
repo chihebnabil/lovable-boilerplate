@@ -16,7 +16,7 @@ const Index = () => {
               NextLovable
             </h1>
             <p className="text-slate-600 leading-relaxed">
-              Convert your Lovable React apps to Next.js applications effortlessly
+              If you are using lovable or this boilerplate, you can use NextLovable to convert your React app to Next.js applications effortlessly.
             </p>
           </div>
           
