@@ -6,7 +6,7 @@ alwaysApply: false
 
 # Design System Rules
 
-## 🚨 CRITICAL DESIGN REQUIREMENTS
+## CRITICAL DESIGN REQUIREMENTS
 
 ### Accessibility Standards (WCAG 2.1 AA)
 - **TEXT CONTRAST**: Minimum 4.5:1 ratio for normal text
@@ -16,18 +16,18 @@ alwaysApply: false
 
 ### Safe High-Contrast Combinations
 ```tsx
-// ✅ Light backgrounds
+// Light backgrounds
 bg-white text-slate-900          // 21:1 ratio
 bg-slate-50 text-slate-800       // 16.7:1 ratio
 bg-blue-50 text-blue-900         // 14.2:1 ratio
 
-// ✅ Dark backgrounds  
+// Dark backgrounds  
 bg-slate-900 text-white          // 21:1 ratio
 bg-slate-800 text-slate-100      // 15.8:1 ratio
 bg-blue-900 text-blue-50         // 18.1:1 ratio
 ```
 
-### ❌ NEVER USE These Low-Contrast Combinations
+### NEVER USE These Low-Contrast Combinations
 ```tsx
 bg-slate-400 text-white          // Only 3.1:1 ratio
 text-slate-400 on bg-white       // Common mistake
@@ -118,14 +118,14 @@ border-slate-400 text-slate-400  // Poor outline buttons
 ">
 ```
 
-## ❌ NEVER CREATE
+## NEVER CREATE
 - Generic designs that look template-like
 - Poor accessibility (contrast violations)
 - Static interfaces without micro-interactions
 - Overuse of default grays without intention
 - Color choices without consideration for brand or industry context
 
-## ✅ ALWAYS CREATE
+## ALWAYS CREATE
 - Industry-appropriate visual identity and emotional tone
 - Premium visual hierarchy with scale and contrast
 - Accessible interfaces with proper contrast (4.5:1 minimum)

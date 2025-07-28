@@ -3,13 +3,13 @@ applyTo: 'src/pages/**/*.{tsx,ts}'
 ---
 # Page Component Guidelines
 
-## 📄 PAGE ARCHITECTURE RULES
+## PAGE ARCHITECTURE RULES
 
 ### Pages are COMPOSITION ONLY
 Pages should be thin orchestration layers that compose smaller components:
 
 ```tsx
-// ✅ PERFECT: Page as composition layer (10-30 lines max)
+// PERFECT: Page as composition layer (10-30 lines max)
 const DashboardPage = () => {
   return (
     <PageLayout>
@@ -23,7 +23,7 @@ const DashboardPage = () => {
   )
 }
 
-// ❌ NEVER: Business logic in pages
+// NEVER: Business logic in pages
 const BadDashboardPage = () => {
   const [users, setUsers] = useState([])
   const [loading, setLoading] = useState(true)
@@ -46,21 +46,23 @@ const BadDashboardPage = () => {
 
 ### Data Loading Pattern
 ```tsx
-// ✅ PERFECT: Data loading in custom hooks
-const UserDashboard = () => {
-  const { data: user, isLoading } = useCurrentUser()
-  const { data: stats } = useUserStats(user?.id)
+```tsx
+// PERFECT: Data loading in custom hooks
+const UserProfilePage = () => {
+  const { user, isLoading, error } = useUser()
   
-  if (isLoading) return <PageSkeleton />
+  if (isLoading) return <LoadingSpinner />
+  if (error) return <ErrorMessage error={error} />
   
   return (
     <PageLayout>
       <UserHeader user={user} />
-      <UserStats stats={stats} />
-      <UserActivity userId={user.id} />
+      <UserDetails user={user} />
+      <UserActivity user={user} />
     </PageLayout>
   )
 }
+```
 ```
 
 ### Page File Structure

@@ -172,13 +172,13 @@ interface ImportMeta {
 }
 ```
 
-## ❌ Type Anti-Patterns
+## Type Anti-Patterns
 - Using `any` type
 - Inline interface definitions in components
 - Not leveraging Zod for runtime validation
 - Duplicate type definitions across files
 
-## ✅ Type Best Practices
+## Type Best Practices
 - Define shared types in `lib/types.ts`
 - Use Zod schemas for validation and type inference
 - Leverage TypeScript strict mode

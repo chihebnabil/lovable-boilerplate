@@ -3,7 +3,7 @@ applyTo: 'src/lib/**/*.{ts,tsx}'
 ---
 # Utility & Service Guidelines
 
-## 🛠️ LIB ORGANIZATION RULES
+## LIB ORGANIZATION RULES
 
 ### File Structure
 ```
@@ -23,12 +23,12 @@ src/lib/
 
 ### Utility Functions (utils.ts)
 ```tsx
-// ✅ Keep existing cn function
+// Keep existing cn function
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 
-// ✅ Add other utilities
+// Add other utilities
 export function formatDate(date: Date | string): string {
   return new Intl.DateTimeFormat('en-US').format(new Date(date))
 }
@@ -47,7 +47,7 @@ export function debounce<T extends (...args: any[]) => any>(
 
 ### Type Definitions (types.ts)
 ```tsx
-// ✅ Shared application types
+// Shared application types
 export interface User {
   id: string
   email: string
@@ -68,7 +68,7 @@ export type Theme = 'light' | 'dark' | 'system'
 
 ### Constants (constants.ts)
 ```tsx
-// ✅ Application constants
+// Application constants
 export const API_ENDPOINTS = {
   USERS: '/api/users',
   PRODUCTS: '/api/products',

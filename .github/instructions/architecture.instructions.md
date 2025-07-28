@@ -3,16 +3,16 @@ applyTo: 'src/**/*.{tsx,ts}'
 ---
 # Code Architecture & Reusability Guidelines
 
-## 🚨 CRITICAL ARCHITECTURE RULES
+## CRITICAL ARCHITECTURE RULES
 
-### ❌ NEVER CREATE:
+### NEVER CREATE:
 - Components over 300 lines
 - Duplicate logic across components
 - Inline API calls in UI components
 - Mixed concerns (UI + business logic + API)
 - Copy-pasted code blocks
 
-### ✅ ALWAYS CREATE:
+### ALWAYS CREATE:
 - Single-responsibility components (20-100 lines)
 - Custom hooks for reusable logic
 - Service layer for API calls
@@ -22,21 +22,21 @@ applyTo: 'src/**/*.{tsx,ts}'
 ## Component Composition Over Monoliths
 
 **NEVER create large, monolithic components that handle multiple concerns:**
-❌ **Avoid**: Single components or page that exceed 300 lines or handle multiple responsibilities
-❌ **Avoid**: Pages that contain all logic inline instead of using smaller components
-❌ **Avoid**: Components that mix UI rendering, business logic, and API calls
+**Avoid**: Single components or page that exceed 300 lines or handle multiple responsibilities
+**Avoid**: Pages that contain all logic inline instead of using smaller components
+**Avoid**: Components that mix UI rendering, business logic, and API calls
 
 **ALWAYS break down complex functionality into smaller, reusable pieces:**
-✅ **Create**: Focused components with single responsibilities (20-100 lines)
-✅ **Create**: Composition patterns using multiple small components 
-✅ **Create**: Custom hooks for reusable logic extraction
-✅ **Create**: Separate layers for data fetching, business logic, and presentation
+**Create**: Focused components with single responsibilities (20-100 lines)
+**Create**: Composition patterns using multiple small components 
+**Create**: Custom hooks for reusable logic extraction
+**Create**: Separate layers for data fetching, business logic, and presentation
 
 ## Component Organization Strategy
 
 ### 1. Feature-Based Organization
 ```tsx
-// ❌ Wrong: Everything in one file
+// Wrong: Everything in one file
 const Dashboard = () => {
   // 300+ lines of mixed logic
   return <div>{/* massive JSX */}</div>

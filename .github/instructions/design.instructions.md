@@ -3,16 +3,16 @@ applyTo: 'src/**/*.{tsx,css}'
 ---
 # Design System Guidelines
 
-## 🚨 CRITICAL DESIGN RULES
+## CRITICAL DESIGN RULES
 
-### ❌ NEVER CREATE:
+### NEVER CREATE:
 - **Poor accessibility** - must maintain 4.5:1 contrast ratio minimum
 - **Generic designs** - always adapt to target industry/audience  
 - **Template-like layouts** - create unique, custom-crafted interfaces
 - **Static interfaces** - include sophisticated micro-interactions
 - **Default grays** (slate-400, gray-500) - use rich, intentional color palettes
 
-### ✅ ALWAYS CREATE:
+### ALWAYS CREATE:
 - **Industry-appropriate design** - adapt colors/typography to target audience
 - **Premium visual hierarchy** - sophisticated use of scale, contrast, spacing
 - **Accessible interfaces** - WCAG 2.1 AA compliant (4.5:1 text contrast)

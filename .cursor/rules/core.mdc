@@ -6,7 +6,7 @@ alwaysApply: true
 
 # React + Vite + shadcn/ui Template - Core Rules
 
-## 🚨 CRITICAL ARCHITECTURE RULES
+## CRITICAL ARCHITECTURE RULES
 
 ### Component Size & Organization
 - **NEVER** create components over 300 lines

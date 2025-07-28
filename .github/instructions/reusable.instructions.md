@@ -7,7 +7,7 @@ task: 'Split components into separate files'
 
 When working inside files in `src/pages/**`, follow these rules strictly:
 
-## ✂️ Component Splitting Rules
+## Component Splitting Rules
 
 - If a component exceeds **100 lines**, move it to its own file.
 - For each component extracted, place it in `src/components/[context]`:

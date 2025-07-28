@@ -261,14 +261,14 @@ export const conditionalSchema = z.object({
 )
 ```
 
-## ❌ Form Anti-Patterns
+## Form Anti-Patterns
 - Manual form state management
 - Inline validation logic
 - No error handling
 - Uncontrolled components mixing with controlled
 - No loading states during submission
 
-## ✅ Form Best Practices
+## Form Best Practices
 - Always use React Hook Form + Zod
 - Extract form logic to custom hooks
 - Provide loading states during submission

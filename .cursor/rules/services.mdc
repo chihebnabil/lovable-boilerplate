@@ -175,13 +175,13 @@ export const useCreateUser = () => {
 }
 ```
 
-## ❌ NEVER in Components
+## NEVER in Components
 - Direct API calls (`fetch`, `axios` inline)
 - Business logic mixed with UI
 - Hardcoded API URLs
 - Duplicate validation schemas
 
-## ✅ ALWAYS Use
+## ALWAYS Use
 - Service layer for all API calls
 - Shared types for consistent interfaces
 - Custom hooks for data fetching

@@ -3,16 +3,16 @@ applyTo: '**'
 ---
 # React + Vite + shadcn/ui Template - Premium Design System
 
-## 🚨 CRITICAL RULES - READ FIRST
+## CRITICAL RULES - READ FIRST
 
-### ❌ NEVER CREATE:
+### NEVER CREATE:
 - **Monolithic components** over 300 lines
 - **Copy-pasted code** - extract to reusable functions/hooks
 - **Inline API calls** in components - use service layer
 - **Poor accessibility** - maintain WCAG 2.1 AA contrast (4.5:1 minimum)
 - **Generic designs** - always adapt to target industry/audience
 
-### ✅ ALWAYS CREATE:
+### ALWAYS CREATE:
 - **Focused components** (20-100 lines, single responsibility)
 - **Custom hooks** for reusable logic
 - **Composition patterns** - build complex UI from smaller parts
@@ -26,18 +26,18 @@ npm run build        # Production build
 npm run lint         # Run ESLint - MUST pass before shipping
 ```
 
-## 📚 DETAILED GUIDELINES
+## DETAILED GUIDELINES
 
 This project uses a modular instruction system. For comprehensive guidance, see:
 
-- **🏗️ [Architecture Guidelines](./architecture.instructions.md)** - Component organization, reusability patterns, custom hooks, and code structure
-- **🎨 [Design Guidelines](./design.instructions.md)** - Visual design system, industry-specific styling, accessibility, and premium UI patterns
-- **⚙️ [Development Workflow](./development.instructions.md)** - Commands, configuration, testing, and quality standards
-- **🧩 [Component Guidelines](./components.instructions.md)** - UI, common, and feature component patterns
-- **🪝 [Hooks Guidelines](./hooks.instructions.md)** - Custom hook patterns for data, forms, and UI state
-- **📄 [Page Guidelines](./pages.instructions.md)** - Page composition and organization rules
-- **🛠️ [Library Guidelines](./lib.instructions.md)** - Utilities, types, constants, and service layer patterns
-- **✅ [Quality Checklist](./quality.instructions.md)** - Code quality, design standards, and never-ship rules
+- **[Architecture Guidelines](./architecture.instructions.md)** - Component organization, reusability patterns, custom hooks, and code structure
+- **[Design Guidelines](./design.instructions.md)** - Visual design system, industry-specific styling, accessibility, and premium UI patterns
+- **[Development Workflow](./development.instructions.md)** - Commands, configuration, testing, and quality standards
+- **[Component Guidelines](./components.instructions.md)** - UI, common, and feature component patterns
+- **[Hooks Guidelines](./hooks.instructions.md)** - Custom hook patterns for data, forms, and UI state
+- **[Page Guidelines](./pages.instructions.md)** - Page composition and organization rules
+- **[Library Guidelines](./lib.instructions.md)** - Utilities, types, constants, and service layer patterns
+- **[Quality Checklist](./quality.instructions.md)** - Code quality, design standards, and never-ship rules
 
 ## Tech Stack Overview
 
@@ -90,7 +90,7 @@ src/
 └── context/             # React context providers
 ```
 
-## ⚠️ Security Note
+## Security Note
 This is a **client-side application**. Only use `VITE_` environment variables for public configuration. Never expose sensitive data like API secrets.
 
 ## Important Reminders

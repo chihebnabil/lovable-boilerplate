@@ -3,7 +3,7 @@ applyTo: '{package.json,vite.config.ts,tsconfig.json,tailwind.config.ts,src/**}'
 ---
 # Development Workflow & Commands
 
-## 🚨 ESSENTIAL COMMANDS
+## ESSENTIAL COMMANDS
 
 ```bash
 npm run dev          # Start development server (port 8080)
@@ -13,15 +13,15 @@ npm run preview      # Preview production build locally
 npm install          # Install dependencies
 ```
 
-## 🔧 CRITICAL WORKFLOW RULES
+## CRITICAL WORKFLOW RULES
 
-### ✅ BEFORE SHIPPING:
+### BEFORE SHIPPING:
 - Run `npm run lint` and fix all issues
 - Test responsive design on mobile/desktop
 - Verify accessibility contrast ratios
 - Ensure no console errors in browser
 
-### ❌ NEVER SHIP:
+### NEVER SHIP:
 - Code with ESLint errors
 - Untested responsive layouts
 - Poor accessibility (contrast violations)
@@ -73,7 +73,7 @@ npm i @supabase/supabase-js
 ```
 
 ## Environment Variables Security Warning
-⚠️ **CRITICAL**: This is a **client-side application**. All environment variables with the `VITE_` prefix will be **bundled and exposed** in the final build. 
+**CRITICAL**: This is a **client-side application**. All environment variables with the `VITE_` prefix will be **bundled and exposed** in the final build. 
 
 **Never include sensitive data in environment variables:**
 - API secrets, private keys, database passwords, service account credentials

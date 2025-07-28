@@ -8,7 +8,7 @@ alwaysApply: false
 
 ## Component Patterns
 
-### ✅ GOOD Component Structure
+### GOOD Component Structure
 ```tsx
 // Single responsibility, 20-80 lines
 interface UserCardProps {
@@ -31,7 +31,7 @@ export const UserCard = ({ user, onEdit, className }: UserCardProps) => {
 }
 ```
 
-### ❌ AVOID: Monolithic Components
+### AVOID: Monolithic Components
 ```tsx
 // DON'T: 300+ lines mixing concerns
 const UserManagement = () => {
@@ -41,7 +41,7 @@ const UserManagement = () => {
 
 ### Component Composition Pattern
 ```tsx
-// ✅ Build complex UI from smaller components
+// Build complex UI from smaller components
 const Dashboard = () => (
   <PageLayout>
     <DashboardHeader />
@@ -94,7 +94,7 @@ export const UserForm = ({ onSubmit, initialData }: UserFormProps) => {
 
 ### Pages = Composition Only
 ```tsx
-// ✅ PERFECT: Thin orchestration layer (10-30 lines max)
+// PERFECT: Thin orchestration layer (10-30 lines max)
 const DashboardPage = () => {
   const { data: user, isLoading } = useCurrentUser()
   
@@ -113,7 +113,7 @@ const DashboardPage = () => {
 }
 ```
 
-### ❌ NEVER in Pages
+### NEVER in Pages
 - Business logic (extract to hooks)
 - API calls (use service layer)
 - Complex state management

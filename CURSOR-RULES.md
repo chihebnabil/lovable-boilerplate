@@ -4,10 +4,10 @@ This project uses organized Cursor rules located in `.cursor/rules/` to maintain
 
 ## Quick Reference
 
-### 🔄 Always Active
+### Always Active
 - **Core Rules** - Architecture patterns, component limits, quality gates
 
-### 🎯 Context-Aware Rules (Auto-load based on files you edit)
+### Context-Aware Rules (Auto-load based on files you edit)
 - **Components** - When editing `src/components/**` or `src/pages/**`
 - **Hooks** - When editing `src/hooks/**`
 - **Design** - When editing UI/styling files
@@ -15,7 +15,7 @@ This project uses organized Cursor rules located in `.cursor/rules/` to maintain
 - **Forms** - When editing form components or validation schemas
 - **TypeScript** - When editing utility/type files
 
-### 📋 Manual Reference
+### Manual Reference
 Use `@rule-name` in your prompts:
 - `@quality` - Quality checklist before shipping
 - `@components` - Component development guidance

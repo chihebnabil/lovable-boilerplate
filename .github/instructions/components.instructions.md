@@ -3,7 +3,7 @@ applyTo: 'src/components/**/*.{tsx,ts}'
 ---
 # Component-Specific Guidelines
 
-## 🎯 COMPONENT ARCHITECTURE RULES
+## COMPONENT ARCHITECTURE RULES
 
 ### UI Components (`src/components/ui/`)
 - **READ-ONLY**: Never modify shadcn/ui components directly
@@ -22,7 +22,7 @@ applyTo: 'src/components/**/*.{tsx,ts}'
 
 ## Component Size Limits
 ```tsx
-// ✅ GOOD: Focused, single-purpose component (20-80 lines)
+// GOOD: Focused, single-purpose component (20-80 lines)
 const UserCard = ({ user, onEdit }: UserCardProps) => (
   <Card className="p-4">
     <Avatar src={user.avatar} />
@@ -34,7 +34,7 @@ const UserCard = ({ user, onEdit }: UserCardProps) => (
   </Card>
 )
 
-// ❌ BAD: Monolithic component over 100 lines
+// BAD: Monolithic component over 100 lines
 const UserManagement = () => {
   // 200+ lines mixing multiple concerns
 }
@@ -42,7 +42,7 @@ const UserManagement = () => {
 
 ## Component Composition Patterns
 ```tsx
-// ✅ PERFECT: Composition over monoliths
+// PERFECT: Composition over monoliths
 const DashboardPage = () => (
   <PageLayout>
     <DashboardHeader />

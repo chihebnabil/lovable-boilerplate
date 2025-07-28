@@ -3,11 +3,11 @@ applyTo: 'src/hooks/**/*.{ts,tsx}'
 ---
 # Custom Hooks Guidelines
 
-## 🪝 HOOK PATTERNS & BEST PRACTICES
+## HOOK PATTERNS & BEST PRACTICES
 
 ### Data Fetching Hooks
 ```tsx
-// ✅ PERFECT: Focused data fetching
+// PERFECT: Focused data fetching
 export const useUsers = () => {
   return useQuery({
     queryKey: ['users'],
@@ -27,7 +27,7 @@ export const useUser = (id: string) => {
 
 ### Form Hooks
 ```tsx
-// ✅ PERFECT: Reusable form logic
+// PERFECT: Reusable form logic
 export const useUserForm = (initialData?: Partial<User>) => {
   const form = useForm<UserFormData>({
     resolver: zodResolver(userSchema),
@@ -46,7 +46,7 @@ export const useUserForm = (initialData?: Partial<User>) => {
 
 ### UI State Hooks
 ```tsx
-// ✅ PERFECT: Reusable UI state
+// PERFECT: Reusable UI state
 export const useDisclosure = (initialState = false) => {
   const [isOpen, setIsOpen] = useState(initialState)
   
