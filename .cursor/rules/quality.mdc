@@ -18,14 +18,17 @@ alwaysApply: false
 - [ ] **Component composition** - Complex UI built from smaller, focused components
 
 ### ✅ Design Quality  
-- [ ] Uses sophisticated color palette (not default grays)
+- [ ] Uses intentional color palette that serves the design purpose
 - [ ] Has proper visual hierarchy with varied typography scales
 - [ ] Includes subtle animations and micro-interactions
 - [ ] Features generous whitespace and purposeful spacing
 - [ ] All interactive elements have clear hover/active states
 - [ ] **Accessibility standards are met (proper contrast, focus states)**
 - [ ] Mobile experience is thoughtfully designed
-- [ ] Maintains consistent color story throughout
+- [ ] Maintains cohesive visual story throughout
+- [ ] Design feels custom-crafted, not template-like
+- [ ] Visual identity matches target industry and audience
+- [ ] Color choices enhance user experience and brand message
 
 ### ✅ Essential Commands Check
 ```bash

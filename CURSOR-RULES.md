@@ -28,6 +28,8 @@ Use `@rule-name` in your prompts:
 - **Accessibility**: WCAG 2.1 AA standards (4.5:1 contrast)
 - **Type Safety**: Shared types in `lib/types.ts`
 - **Service Layer**: No inline API calls in components
+- **Design Philosophy**: Industry-appropriate design with purposeful color psychology
+- **Visual Quality**: Premium, sophisticated interfaces that feel custom-crafted
 
 ## Before Shipping
 1. Run `npm run lint` (must pass)

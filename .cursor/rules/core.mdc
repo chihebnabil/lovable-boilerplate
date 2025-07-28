@@ -70,3 +70,5 @@ npm run lint         # Run ESLint - MUST pass before shipping
 - **ACCESSIBILITY**: Maintain WCAG 2.1 AA contrast (4.5:1 minimum)
 - **NO CONSOLE ERRORS**: Zero warnings in browser console
 - **RESPONSIVE**: Test on mobile and desktop
+- **DESIGN QUALITY**: Industry-appropriate visual identity with purposeful color psychology
+- **CUSTOM DESIGN**: Interfaces should feel premium and custom-crafted, not template-like

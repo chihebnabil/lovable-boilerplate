@@ -26,9 +26,10 @@ applyTo: 'src/**/*.{tsx,css}'
 - **Sophisticated Hierarchy**: Use contrast, scale, and spacing strategically
 - **Purposeful Motion**: Every animation should enhance usability
 - **Breathing Room**: Generous whitespace creates luxury feel
-- **Cohesive Color Story**: Never use random colors - every choice is intentional
+- **Cohesive Visual Story**: Design choices should work together harmoniously
 - **Unique Visual Identity**: Design should feel custom-crafted, never template-like
-- **Industry-Appropriate Design**: Adapt colors, typography, and visual style to match the target industry or niche
+- **Industry-Appropriate Design**: Visual language should match the target audience and use case
+- **Color Psychology**: Use colors intentionally to evoke the right emotions and associations
 
 ## Visual Quality Standards
 
@@ -38,139 +39,110 @@ applyTo: 'src/**/*.{tsx,css}'
 - Basic hover states (simple color changes)
 - Template-like layouts
 - Uniform spacing everywhere
-- Default Tailwind grays (slate-500, gray-400, etc.)
+- Overuse of default Tailwind grays without intention
 - Static, lifeless interfaces
+- Color choices without consideration for brand or industry context
 
 **ALWAYS CREATE**:
 - Dynamic, engaging compositions with visual flow
-- Rich color palettes with gradients and depth
+- Rich, intentional color palettes that serve the design purpose
 - Sophisticated micro-interactions
 - Asymmetrical layouts that guide the eye
 - Varied spacing that creates rhythm
 - High contrast, accessible text combinations
 - Interactive, responsive designs with personality
+- Color schemes that enhance the user experience and brand message
 
 ## INDUSTRY-SPECIFIC DESIGN ADAPTATION
 
 ### Design Philosophy by Industry
-**Always adapt visual identity, color palette, and tone to match the target industry or niche:**
+**Always adapt visual identity, aesthetic tone, and emotional impact to match the target industry or niche:**
 
 ### Technology & SaaS
-- **Colors**: Deep blues, purples, electric accents (blue-600, purple-600, cyan-500)
-- **Typography**: Modern, clean sans-serif with geometric elements
-- **Visual Style**: Minimal, data-driven, futuristic gradients
-- **Animation**: Smooth, precise micro-interactions
-```tsx
-bg-gradient-to-br from-blue-950 via-purple-950 to-slate-950
-text-blue-400, text-purple-400, text-cyan-400
-```
+- **Color Psychology**: Modern, innovative, forward-thinking palettes with high-tech feeling
+- **Typography**: Clean geometric sans-serif with futuristic character
+- **Visual Style**: Minimal, data-driven, sophisticated gradients and depth
+- **Animation**: Smooth, precise micro-interactions that feel cutting-edge
+- **Emotional Tone**: Innovation, efficiency, technological advancement
 
 ### Finance & Banking
-- **Colors**: Navy, gold, emerald accents (slate-900, emerald-600, amber-500)
-- **Typography**: Professional serif for headlines, clean sans-serif for body
-- **Visual Style**: Trust-building, sophisticated, minimal
-- **Animation**: Subtle, professional hover states
-```tsx
-bg-gradient-to-br from-slate-900 via-slate-800 to-emerald-950
-text-emerald-400, text-amber-400, text-slate-200
-```
+- **Color Psychology**: Trustworthy, stable, premium tones that convey security
+- **Typography**: Professional typography mixing authority with approachability
+- **Visual Style**: Clean, sophisticated, confidence-building with subtle luxury
+- **Animation**: Subtle, professional interactions that reinforce reliability
+- **Emotional Tone**: Trust, stability, professional competence
 
 ### Healthcare & Medical
-- **Colors**: Calming blues, soft greens, clinical whites (blue-500, teal-500, slate-50)
-- **Typography**: Clean, readable sans-serif throughout
-- **Visual Style**: Clean, accessible, trustworthy
-- **Animation**: Gentle, non-distracting transitions
-```tsx
-bg-gradient-to-br from-blue-50 via-teal-50 to-slate-50
-text-blue-700, text-teal-700, text-slate-800
-```
+- **Color Psychology**: Calming, clean, trustworthy palette promoting wellness
+- **Typography**: Highly readable, accessible fonts prioritizing clarity
+- **Visual Style**: Clean, sterile-feeling but warm, emphasizing care and precision
+- **Animation**: Gentle, non-distracting transitions that don't overwhelm
+- **Emotional Tone**: Care, trust, healing, accessibility
 
 ### Creative & Design
-- **Colors**: Vibrant, artistic palettes (pink-500, orange-500, violet-600)
-- **Typography**: Creative font pairing, artistic hierarchy
-- **Visual Style**: Bold, expressive, portfolio-focused
-- **Animation**: Playful, engaging micro-interactions
-```tsx
-bg-gradient-to-br from-pink-500 via-purple-600 to-orange-500
-text-pink-200, text-purple-200, text-orange-200
-```
+- **Color Psychology**: Bold, artistic, expressive palettes showcasing creativity
+- **Typography**: Creative font combinations demonstrating design expertise
+- **Visual Style**: Portfolio-focused, visually striking, artistic expression
+- **Animation**: Playful, engaging interactions that showcase creativity
+- **Emotional Tone**: Inspiration, creativity, artistic vision
 
 ### E-commerce & Retail
-- **Colors**: Warm, inviting tones (rose-500, amber-500, slate-800)
-- **Typography**: Friendly, approachable sans-serif
-- **Visual Style**: Product-focused, conversion-optimized
-- **Animation**: Shopping-focused interactions (cart, wishlist)
-```tsx
-bg-gradient-to-br from-rose-50 via-amber-50 to-slate-50
-text-rose-700, text-amber-700, text-slate-800
-```
+- **Color Psychology**: Warm, inviting tones that encourage purchasing decisions
+- **Typography**: Friendly, approachable fonts that build customer connection
+- **Visual Style**: Product-focused, conversion-optimized, shopping-friendly
+- **Animation**: Shopping-focused interactions (product previews, cart actions)
+- **Emotional Tone**: Desire, comfort, value, satisfaction
 
 ### Education & Learning
-- **Colors**: Fresh, energetic palettes (blue-500, green-500, yellow-400)
-- **Typography**: Clear, student-friendly fonts
-- **Visual Style**: Approachable, encouraging, progress-focused
-- **Animation**: Learning-focused progressions and celebrations
-```tsx
-bg-gradient-to-br from-blue-500 via-green-500 to-yellow-400
-text-blue-800, text-green-800, text-yellow-800
-```
+- **Color Psychology**: Fresh, energetic palettes that motivate and inspire learning
+- **Typography**: Clear, student-friendly fonts optimized for extended reading
+- **Visual Style**: Approachable, encouraging, progress-focused design patterns
+- **Animation**: Learning-focused progressions and achievement celebrations
+- **Emotional Tone**: Growth, achievement, encouragement, curiosity
 
 ### Real Estate & Property
-- **Colors**: Earthy, luxury tones (slate-700, amber-600, emerald-700)
-- **Typography**: Elegant serif for luxury properties, clean sans-serif for modern
-- **Visual Style**: Property showcase-focused, luxury aesthetic
-- **Animation**: Property tour-inspired interactions
-```tsx
-bg-gradient-to-br from-slate-800 via-amber-900 to-emerald-900
-text-amber-200, text-emerald-200, text-slate-200
-```
+- **Color Psychology**: Sophisticated, luxurious tones suggesting premium lifestyle
+- **Typography**: Elegant typography reflecting property quality and sophistication
+- **Visual Style**: Property showcase-focused with luxury aesthetic appeal
+- **Animation**: Property tour-inspired interactions and smooth transitions
+- **Emotional Tone**: Aspiration, luxury, home, investment value
 
 ### Food & Restaurant
-- **Colors**: Appetite-stimulating colors (red-600, orange-500, yellow-500)
-- **Typography**: Warm, inviting fonts
-- **Visual Style**: Food photography-focused, sensory appeal
-- **Animation**: Menu and ordering flow optimizations
-```tsx
-bg-gradient-to-br from-red-900 via-orange-900 to-yellow-900
-text-red-200, text-orange-200, text-yellow-200
-```
+- **Color Psychology**: Appetite-stimulating, warm palettes that enhance food appeal
+- **Typography**: Warm, inviting fonts that create culinary atmosphere
+- **Visual Style**: Food photography-focused with sensory appeal
+- **Animation**: Menu interactions and ordering flow optimizations
+- **Emotional Tone**: Appetite, comfort, satisfaction, culinary experience
 
 ### Fitness & Wellness
-- **Colors**: Energetic, motivational palettes (green-500, blue-500, orange-500)
-- **Typography**: Strong, motivational fonts
-- **Visual Style**: Progress-focused, energetic, health-conscious
-- **Animation**: Activity and progress-based interactions
-```tsx
-bg-gradient-to-br from-green-600 via-blue-600 to-orange-600
-text-green-200, text-blue-200, text-orange-200
-```
+- **Color Psychology**: Energetic, motivational palettes inspiring action and health
+- **Typography**: Strong, dynamic fonts conveying energy and motivation
+- **Visual Style**: Progress-focused, health-conscious, achievement-oriented
+- **Animation**: Activity-based interactions showing progress and momentum
+- **Emotional Tone**: Energy, motivation, achievement, transformation
 
 ### Legal & Professional Services
-- **Colors**: Authoritative, trustworthy tones (slate-800, blue-800, amber-600)
-- **Typography**: Professional serif for trust, clean sans-serif for readability
-- **Visual Style**: Credible, professional, document-focused
-- **Animation**: Minimal, professional hover states only
-```tsx
-bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800
-text-blue-200, text-amber-200, text-slate-200
-```
+- **Color Psychology**: Authoritative, trustworthy tones conveying expertise
+- **Typography**: Professional typography balancing authority with accessibility
+- **Visual Style**: Credible, document-focused, emphasizing expertise
+- **Animation**: Minimal, professional interactions maintaining gravitas
+- **Emotional Tone**: Authority, trust, competence, reliability
 
 ### Travel & Hospitality
-- **Colors**: Wanderlust-inspiring palettes (sky-500, teal-500, sunset gradients)
-- **Typography**: Adventure-inspiring, wanderlust fonts
-- **Visual Style**: Destination-focused, experiential imagery
-- **Animation**: Journey and exploration-themed interactions
-```tsx
-bg-gradient-to-br from-sky-500 via-teal-500 to-purple-600
-text-sky-200, text-teal-200, text-purple-200
-```
+- **Color Psychology**: Wanderlust-inspiring palettes evoking adventure and escape
+- **Typography**: Adventure-inspiring fonts suggesting exploration and discovery
+- **Visual Style**: Destination-focused, experiential, emotionally evocative
+- **Animation**: Journey-themed interactions and exploration-inspired transitions
+- **Emotional Tone**: Adventure, escape, discovery, memorable experiences
 
 ### ALWAYS ASK YOURSELF:
 1. What industry/niche is this for?
 2. What emotions should this evoke in the target audience?
-3. What visual expectations does this industry have?
-4. How can the color palette reinforce the brand message?
-5. What level of formality/playfulness is appropriate?
+3. What visual expectations and cultural norms does this industry have?
+4. How can the design reinforce trust, expertise, or desired brand perception?
+5. What level of formality, playfulness, or sophistication is appropriate?
+6. Does the color palette, typography, and layout communicate the right message?
+7. Will this design differentiate from competitors while meeting user expectations?
 
 ## ACCESSIBILITY & CONTRAST REQUIREMENTS (WCAG 2.1 AA)
 
@@ -200,14 +172,21 @@ hover:bg-blue-700 hover:text-white  // Maintain on hover ✅
 
 ### CRITICAL: Avoid These Common Accessibility Failures
 ```tsx
-// ❌ Poor contrast combinations - NEVER USE
+// ❌ Poor contrast combinations - AVOID THESE PATTERNS
 bg-slate-400 text-white          // Only 3.1:1 ratio
-bg-slate-500 text-white          // Only 4.6:1 ratio (use slate-600+)
-text-slate-400 on bg-white       // Most common CTA text mistake
+bg-slate-500 text-white          // Only 4.6:1 ratio (use darker backgrounds)
+text-slate-400 on bg-white       // Common CTA text mistake
 text-slate-500 on bg-slate-100   // Poor secondary button contrast
 border-slate-400 text-slate-400  // Poor outline button
 border-white/30 text-white       // Border invisible
 bg-gray-100 text-gray-500        // Very common but poor contrast
+
+// ✅ Better alternatives - USE THESE PATTERNS
+bg-slate-600 text-white          // 8.59:1 ratio - safe
+bg-slate-700 text-white          // 11.63:1 ratio - safer
+text-slate-700 on bg-white       // 10.45:1 ratio - excellent
+border-slate-700 text-slate-700  // High contrast outline
+bg-slate-900 text-slate-100      // 15.8:1 ratio - premium
 ```
 
 ### Button Accessibility Requirements

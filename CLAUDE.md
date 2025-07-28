@@ -78,10 +78,12 @@ Over 40 pre-built components available in `src/components/ui/`:
 - Generous spacing: `py-16 lg:py-24` for sections
 - Consistent rhythm: `space-y-4 lg:space-y-6` for content
 - Mobile-first responsive design approach
-- Premium, sophisticated visual hierarchy
+- Premium, sophisticated visual hierarchy with purposeful color psychology
 - **Accessibility**: Maintain WCAG 2.1 AA contrast ratios (4.5:1 minimum)
 - **Never ship** without running `npm run lint` - must pass without errors
-- **Industry-specific designs**: Adapt UI patterns to target audience (avoid generic designs)
+- **Industry-specific designs**: Adapt visual identity, emotional tone, and color psychology to target audience
+- **Design Philosophy**: Create unique, custom-crafted interfaces that feel premium and engaging
+- **Color Strategy**: Use colors intentionally to evoke the right emotions and enhance user experience
 
 ### Configuration Files
 

@@ -35,31 +35,35 @@ text-slate-500 on bg-slate-100   // Poor secondary text
 border-slate-400 text-slate-400  // Poor outline buttons
 ```
 
-## Industry-Specific Color Palettes
+## Industry-Specific Design Psychology
 
 ### Technology & SaaS
-```tsx
-bg-gradient-to-br from-blue-950 via-purple-950 to-slate-950
-text-blue-400, text-purple-400, text-cyan-400
-```
+- **Color Psychology**: Modern, innovative, forward-thinking palettes with high-tech feeling
+- **Typography**: Clean geometric sans-serif with futuristic character
+- **Visual Style**: Minimal, data-driven, sophisticated gradients and depth
+- **Animation**: Smooth, precise micro-interactions that feel cutting-edge
+- **Emotional Tone**: Innovation, efficiency, technological advancement
 
 ### Finance & Banking
-```tsx
-bg-gradient-to-br from-slate-900 via-slate-800 to-emerald-950
-text-emerald-400, text-amber-400, text-slate-200
-```
+- **Color Psychology**: Trustworthy, stable, premium tones that convey security
+- **Typography**: Professional typography mixing authority with approachability
+- **Visual Style**: Clean, sophisticated, confidence-building with subtle luxury
+- **Animation**: Subtle, professional interactions that reinforce reliability
+- **Emotional Tone**: Trust, stability, professional competence
 
 ### Healthcare & Medical
-```tsx
-bg-gradient-to-br from-blue-50 via-teal-50 to-slate-50
-text-blue-700, text-teal-700, text-slate-800
-```
+- **Color Psychology**: Calming, clean, trustworthy palette promoting wellness
+- **Typography**: Highly readable, accessible fonts prioritizing clarity
+- **Visual Style**: Clean, sterile-feeling but warm, emphasizing care and precision
+- **Animation**: Gentle, non-distracting transitions that don't overwhelm
+- **Emotional Tone**: Care, trust, healing, accessibility
 
 ### Creative & Design
-```tsx
-bg-gradient-to-br from-pink-500 via-purple-600 to-orange-500
-text-pink-200, text-purple-200, text-orange-200
-```
+- **Color Psychology**: Bold, artistic, expressive palettes showcasing creativity
+- **Typography**: Creative font combinations demonstrating design expertise
+- **Visual Style**: Portfolio-focused, visually striking, artistic expression
+- **Animation**: Playful, engaging interactions that showcase creativity
+- **Emotional Tone**: Inspiration, creativity, artistic vision
 
 ## Premium Component Patterns
 
@@ -118,10 +122,13 @@ text-pink-200, text-purple-200, text-orange-200
 - Generic designs that look template-like
 - Poor accessibility (contrast violations)
 - Static interfaces without micro-interactions
-- Default gray color schemes (slate-400, gray-500)
+- Overuse of default grays without intention
+- Color choices without consideration for brand or industry context
 
 ## ✅ ALWAYS CREATE
-- Industry-appropriate color palettes
+- Industry-appropriate visual identity and emotional tone
 - Premium visual hierarchy with scale and contrast
-- Accessible interfaces with proper contrast
+- Accessible interfaces with proper contrast (4.5:1 minimum)
 - Purposeful animations that enhance usability
+- Color schemes that enhance user experience and brand message
+- Unique, custom-crafted interfaces that feel premium
