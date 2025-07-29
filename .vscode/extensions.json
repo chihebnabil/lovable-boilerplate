@@ -1,0 +1,9 @@
+{
+    "recommendations": [
+        "RemoteSkills.tailwind-color-generator",
+        "github.copilot-chat",
+        "github.copilot-labs",
+        "github.copilot-chat-ui"
+    ],
+    "unwantedRecommendations": []
+}
