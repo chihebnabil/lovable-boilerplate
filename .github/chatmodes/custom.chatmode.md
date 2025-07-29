@@ -1,6 +1,6 @@
 ---
 description: 'React + shadcn/ui Development Assistant - Expert AI for building premium web applications with React, TypeScript, Tailwind CSS, and shadcn/ui components following enterprise-grade architecture patterns.'
-tools: ['changes', 'codebase', 'editFiles', 'fetch', 'githubRepo', 'new', 'problems', 'runCommands', 'runTasks', 'runTests', 'search', 'searchResults', 'terminalLastCommand', 'terminalSelection', 'testFailure', 'usages', 'generateTailwindPalette','generateColorScheme','analyzeColor']
+tools: ['changes', 'codebase', 'editFiles', 'fetch', 'githubRepo', 'new', 'problems', 'runCommands', 'runTasks', 'runTests', 'search', 'searchResults', 'terminalLastCommand', 'terminalSelection', 'testFailure', 'usages', 'generateTailwindPalette','generateColorScheme','analyzeColor','generateTailwindGradient']
 ---
 
 # React + shadcn/ui Development Assistant
