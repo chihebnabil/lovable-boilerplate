@@ -1,7 +1,42 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:base"
+    "config:base",
+    ":semanticCommits",
+    ":automergeMinor",
+    ":automergePatch",
+    ":automergePr",
+    "group:allNonMajor",
+    "schedule:weekly"
   ],
-  "prhourlylimit": 3,
+  "labels": ["dependencies"],
+  "rangeStrategy": "replace",
+  "packageRules": [
+    {
+      "matchManagers": ["npm"],
+      "matchDepTypes": ["dependencies", "devDependencies"],
+      "automerge": true,
+      "stabilityDays": 2
+    },
+    {
+      "matchPackageNames": ["vite", "@vitejs/plugin-react-swc"],
+      "groupName": "vite ecosystem"
+    },
+    {
+      "matchPackageNames": ["tailwindcss", "@tailwindcss/typography", "postcss", "autoprefixer"],
+      "groupName": "tailwind ecosystem"
+    },
+    {
+      "matchPackagePatterns": ["^@radix-ui/"],
+      "groupName": "radix-ui"
+    },
+    {
+      "matchPackageNames": ["react", "react-dom", "react-router-dom"],
+      "groupName": "react core"
+    }
+  ],
+  "prHourlyLimit": 2,
+  "prConcurrentLimit": 10,
+  "dependencyDashboard": true,
+  "timezone": "Europe/London"
 }
