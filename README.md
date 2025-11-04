@@ -26,14 +26,14 @@ This boilerplate **reverse-engineers** the magic behind [Lovable's](https://lova
 | Technology | Purpose | Version |
 |------------|---------|---------|
 | **React** | UI Library | 19.2.0 |
-| **TypeScript** | Type Safety | 5.5.3 |
-| **Vite** | Build Tool | 7.0.0 |
+| **TypeScript** | Type Safety | 5.9.3 |
+| **Vite** | Build Tool | 7.1.12 |
 | **shadcn/ui** | Component Library | Latest |
-| **Tailwind CSS** | Styling | 3.4.11 |
-| **React Router** | Navigation | 6.26.2 |
-| **TanStack Query** | Data Fetching | 5.56.2 |
-| **React Hook Form** | Form Handling | 7.53.0 |
-| **Zod** | Schema Validation | 3.23.8 |
+| **Tailwind CSS** | Styling | 3.4.18 |
+| **React Router** | Navigation | 7.9.5 |
+| **TanStack Query** | Data Fetching | 5.90.6 |
+| **React Hook Form** | Form Handling | 7.66.0 |
+| **Zod** | Schema Validation | 4.1.12 |
 
 
 
