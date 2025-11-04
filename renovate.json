@@ -1,7 +1,7 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:base",
+    "config:recommended",
     ":semanticCommits",
     ":automergeMinor",
     ":automergePatch",
@@ -9,29 +9,50 @@
     "group:allNonMajor",
     "schedule:weekly"
   ],
-  "labels": ["dependencies"],
+  "labels": [
+    "dependencies"
+  ],
   "rangeStrategy": "replace",
   "packageRules": [
     {
-      "matchManagers": ["npm"],
-      "matchDepTypes": ["dependencies", "devDependencies"],
+      "matchManagers": [
+        "npm"
+      ],
+      "matchDepTypes": [
+        "dependencies",
+        "devDependencies"
+      ],
       "automerge": true,
-      "stabilityDays": 2
+      "minimumReleaseAge": "2 days"
     },
     {
-      "matchPackageNames": ["vite", "@vitejs/plugin-react-swc"],
+      "matchPackageNames": [
+        "vite",
+        "@vitejs/plugin-react-swc"
+      ],
       "groupName": "vite ecosystem"
     },
     {
-      "matchPackageNames": ["tailwindcss", "@tailwindcss/typography", "postcss", "autoprefixer"],
+      "matchPackageNames": [
+        "tailwindcss",
+        "@tailwindcss/typography",
+        "postcss",
+        "autoprefixer"
+      ],
       "groupName": "tailwind ecosystem"
     },
     {
-      "matchPackagePatterns": ["^@radix-ui/"],
-      "groupName": "radix-ui"
+      "groupName": "radix-ui",
+      "matchPackageNames": [
+        "/^@radix-ui//"
+      ]
     },
     {
-      "matchPackageNames": ["react", "react-dom", "react-router-dom"],
+      "matchPackageNames": [
+        "react",
+        "react-dom",
+        "react-router-dom"
+      ],
       "groupName": "react core"
     }
   ],
