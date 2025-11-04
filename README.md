@@ -2,9 +2,9 @@
 
 > **Reverse-engineered Lovable AI app builder** turned into a developer-friendly React boilerplate with comprehensive AI coding assistant instructions.
 
-[![React](https://img.shields.io/badge/React-18.3.1-blue.svg)](https://reactjs.org/)
+[![React](https://img.shields.io/badge/React-19-blue.svg)](https://reactjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.5.3-blue.svg)](https://www.typescriptlang.org/)
-[![Vite](https://img.shields.io/badge/Vite-5.4.1-purple.svg)](https://vitejs.dev/)
+[![Vite](https://img.shields.io/badge/Vite-7.0.0-purple.svg)](https://vitejs.dev/)
 [![shadcn/ui](https://img.shields.io/badge/shadcn%2Fui-components-black.svg)](https://ui.shadcn.com/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4.11-cyan.svg)](https://tailwindcss.com/)
 
@@ -25,9 +25,9 @@ This boilerplate **reverse-engineers** the magic behind [Lovable's](https://lova
 
 | Technology | Purpose | Version |
 |------------|---------|---------|
-| **React** | UI Library | 18.3.1 |
+| **React** | UI Library | 19.2.0 |
 | **TypeScript** | Type Safety | 5.5.3 |
-| **Vite** | Build Tool | 5.4.1 |
+| **Vite** | Build Tool | 7.0.0 |
 | **shadcn/ui** | Component Library | Latest |
 | **Tailwind CSS** | Styling | 3.4.11 |
 | **React Router** | Navigation | 6.26.2 |
