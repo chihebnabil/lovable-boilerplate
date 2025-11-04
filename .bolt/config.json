@@ -6,7 +6,7 @@
   "language": "typescript",
   "template": "vite-react-ts",
   "packageManager": "npm",
-  "nodeVersion": "18",
+  "nodeVersion": "20",
   "autoInstall": true,
   "autoStart": true,
   "startCommand": "npm run dev",
@@ -28,6 +28,16 @@
     "instructionsPath": ".github/instructions/global.instructions.md",
     "enableCodeGeneration": true,
     "enableDesignSystem": true,
-    "designSystemPath": ".github/instructions/design.instructions.md"
+    "designSystemPath": ".github/instructions/design.instructions.md",
+    "additionalInstructions": [
+      ".github/instructions/architecture.instructions.md",
+      ".github/instructions/components.instructions.md",
+      ".github/instructions/development.instructions.md",
+      ".github/instructions/hooks.instructions.md",
+      ".github/instructions/lib.instructions.md",
+      ".github/instructions/pages.instructions.md",
+      ".github/instructions/quality.instructions.md",
+      ".github/instructions/reusable.instructions.md"
+    ]
   }
 }
