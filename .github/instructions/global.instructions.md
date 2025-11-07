@@ -48,6 +48,7 @@ This project uses a modular instruction system. For comprehensive guidance, see:
 - **Styling**: Tailwind CSS with custom theme
 - **Routing**: React Router DOM v6
 - **State Management**: TanStack Query (React Query)
+- **Backend**: Supabase (Authentication, Database, Real-time)
 - **Form Handling**: React Hook Form with Zod validation
 - **Package Manager**: npm
 
@@ -80,6 +81,10 @@ src/
 │   ├── forms/           # Form components
 │   └── features/        # Feature-specific components
 ├── hooks/               # Custom React hooks
+├── integrations/
+│   └── supabase/        # Supabase client and types
+│       ├── client.ts    # Supabase client instance
+│       └── types.ts     # Database type definitions
 ├── lib/
 │   ├── utils.ts         # Utilities (includes cn function)
 │   ├── types.ts         # Shared TypeScript types
@@ -89,6 +94,103 @@ src/
 ├── services/            # API calls
 └── context/             # React context providers
 ```
+
+## Supabase Integration
+
+### Quick Start
+1. Create a Supabase project at [supabase.com](https://supabase.com)
+2. Copy `.env.example` to `.env` and add your credentials:
+   ```bash
+   VITE_SUPABASE_URL=https://your-project.supabase.co
+   VITE_SUPABASE_PUBLISHABLE_KEY=your-anon-key
+   ```
+3. Import and use the Supabase client:
+   ```typescript
+   import { supabase } from "@/integrations/supabase/client";
+   ```
+
+### Usage Examples
+
+**Data Fetching with TanStack Query:**
+```typescript
+import { useQuery } from "@tanstack/react-query";
+import { supabase } from "@/integrations/supabase/client";
+
+export const usePosts = () => {
+  return useQuery({
+    queryKey: ['posts'],
+    queryFn: async () => {
+      const { data, error } = await supabase
+        .from('posts')
+        .select('*')
+        .eq('published', true);
+      
+      if (error) throw error;
+      return data;
+    }
+  });
+};
+```
+
+**Mutations:**
+```typescript
+import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { supabase } from "@/integrations/supabase/client";
+
+export const useCreatePost = () => {
+  const queryClient = useQueryClient();
+  
+  return useMutation({
+    mutationFn: async (newPost) => {
+      const { data, error } = await supabase
+        .from('posts')
+        .insert(newPost)
+        .select()
+        .single();
+      
+      if (error) throw error;
+      return data;
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['posts'] });
+    }
+  });
+};
+```
+
+**Authentication:**
+```typescript
+// Sign up
+const { data, error } = await supabase.auth.signUp({
+  email: 'user@example.com',
+  password: 'securepassword'
+});
+
+// Sign in
+const { data, error } = await supabase.auth.signInWithPassword({
+  email: 'user@example.com',
+  password: 'securepassword'
+});
+
+// Get current user
+const { data: { user } } = await supabase.auth.getUser();
+```
+
+**Type Safety:**
+```typescript
+import type { Tables, TablesInsert } from "@/integrations/supabase/types";
+
+// Use generated types
+type Post = Tables<'posts'>;
+type NewPost = TablesInsert<'posts'>;
+```
+
+### Best Practices
+- Always use TanStack Query for data fetching and mutations
+- Handle errors gracefully with try-catch or error boundaries
+- Use TypeScript types from `@/integrations/supabase/types`
+- Enable Row Level Security (RLS) on your Supabase tables
+- Never expose sensitive credentials in environment variables
 
 ## Security Note
 This is a **client-side application**. Only use `VITE_` environment variables for public configuration. Never expose sensitive data like API secrets.

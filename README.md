@@ -34,8 +34,20 @@ This boilerplate **reverse-engineers** the magic behind [Lovable's](https://lova
 | **TanStack Query** | Data Fetching | 5.90.6 |
 | **React Hook Form** | Form Handling | 7.66.0 |
 | **Zod** | Schema Validation | 4.1.12 |
+| **Supabase** | Backend & Database | 2.80.0 |
 
+## Features
 
+- ⚡ **Lightning Fast Development** with Vite and React 19
+- 🎨 **40+ Pre-built Components** from shadcn/ui
+- 🎯 **Type-Safe** with TypeScript 5.9
+- 🗄️ **Backend Ready** with Supabase integration
+- 📱 **Responsive Design** with Tailwind CSS
+- 🔄 **Smart Data Fetching** with TanStack Query
+- 📋 **Form Validation** with React Hook Form + Zod
+- 🤖 **AI-Optimized** with comprehensive coding instructions
+
+## Getting Started
 
 ### Prerequisites
 - Node.js 18+ or Bun
@@ -53,6 +65,10 @@ npm install
 # or
 bun install
 
+# Set up environment variables
+cp .env.example .env
+# Edit .env with your Supabase credentials
+
 # Start development server
 npm run dev
 # or
@@ -60,6 +76,104 @@ bun dev
 ```
 
 Your app will be running at `http://localhost:8080`
+
+## Supabase Integration
+
+This boilerplate comes with **Supabase** pre-configured for backend functionality including authentication, database, and real-time features.
+
+### Setup Supabase
+
+1. **Create a Supabase Project**
+   - Visit [supabase.com](https://supabase.com) and create a new project
+   - Wait for your database to be provisioned
+
+2. **Configure Environment Variables**
+   ```bash
+   cp .env.example .env
+   ```
+   
+   Add your Supabase credentials to `.env`:
+   ```bash
+   VITE_SUPABASE_URL=https://your-project.supabase.co
+   VITE_SUPABASE_PUBLISHABLE_KEY=your-anon-key
+   ```
+### Using Supabase in Your App
+
+```typescript
+// Import the Supabase client
+import { supabase } from "@/integrations/supabase/client";
+import type { Tables } from "@/integrations/supabase/types";
+
+// Example: Fetch data
+const { data, error } = await supabase
+  .from('posts')
+  .select('*')
+  .eq('published', true);
+
+// Example: Insert data
+const { data, error } = await supabase
+  .from('posts')
+  .insert({
+    title: 'My Post',
+    slug: 'my-post',
+    content: 'Post content',
+    user_id: userId
+  });
+
+// Example: Real-time subscription
+supabase
+  .channel('posts')
+  .on('postgres_changes', 
+    { event: '*', schema: 'public', table: 'posts' },
+    (payload) => {
+      console.log('Change received!', payload);
+    }
+  )
+  .subscribe();
+```
+
+### Type Safety
+
+All database types are automatically generated in `src/integrations/supabase/types.ts`:
+
+```typescript
+import type { Tables, TablesInsert, TablesUpdate } from "@/integrations/supabase/types";
+
+// Use generated types
+type Post = Tables<'posts'>;
+type NewPost = TablesInsert<'posts'>;
+type UpdatePost = TablesUpdate<'posts'>;
+```
+
+### Authentication Example
+
+```typescript
+// Sign up
+const { data, error } = await supabase.auth.signUp({
+  email: 'user@example.com',
+  password: 'password'
+});
+
+// Sign in
+const { data, error } = await supabase.auth.signInWithPassword({
+  email: 'user@example.com',
+  password: 'password'
+});
+
+// Get current user
+const { data: { user } } = await supabase.auth.getUser();
+
+// Sign out
+await supabase.auth.signOut();
+```
+
+### Best Practices
+
+- **Environment Variables**: Never commit `.env` files. Use `.env.example` as a template
+- **Row Level Security**: Enable RLS on your Supabase tables for security
+- **Type Generation**: Regenerate types when your database schema changes
+- **Error Handling**: Always handle errors from Supabase operations
+- **Real-time**: Use Supabase real-time for live updates without polling
 
 ## AI Coding Assistant Instructions
 
