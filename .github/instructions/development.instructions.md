@@ -34,6 +34,7 @@ npm install          # Install dependencies
 - **Tailwind CSS 3.4.11** for styling with custom design system
 - **React Router DOM v6** for client-side routing
 - **TanStack Query** for server state management
+- **Supabase 2.80.0** for backend, authentication, and database
 - **React Hook Form + Zod** for form handling and validation
 
 ## Development Commands
@@ -55,6 +56,7 @@ npm install          # Install dependencies
 - `@/components` for components
 - `@/lib` for utilities
 - `@/hooks` for custom hooks
+- `@/integrations/supabase` for Supabase client and types
 
 ### Routing Structure
 Routes are defined in `src/App.tsx`. Add new routes above the catch-all `*` route:
@@ -66,11 +68,112 @@ Routes are defined in `src/App.tsx`. Add new routes above the catch-all `*` rout
 </Routes>
 ```
 
-## Database Integration
-If using Supabase, place client configuration at `src/integrations/supabase/client.ts`:
-```bash
-npm i @supabase/supabase-js
+## Supabase Integration
+
+### Setup
+The boilerplate comes with Supabase pre-configured:
+
+1. **Install Supabase** (already in package.json):
+   ```bash
+   npm i @supabase/supabase-js
+   ```
+
+2. **Environment Configuration**:
+   Copy `.env.example` to `.env` and add your Supabase credentials:
+   ```bash
+   VITE_SUPABASE_URL=https://your-project.supabase.co
+   VITE_SUPABASE_PUBLISHABLE_KEY=your-anon-key
+   ```
+
+3. **Client Location**: `src/integrations/supabase/client.ts`
+4. **Type Definitions**: `src/integrations/supabase/types.ts`
+
+### Usage Patterns
+
+**Data Fetching with TanStack Query:**
+```typescript
+import { useQuery } from "@tanstack/react-query";
+import { supabase } from "@/integrations/supabase/client";
+
+export const usePosts = () => {
+  return useQuery({
+    queryKey: ['posts'],
+    queryFn: async () => {
+      const { data, error } = await supabase
+        .from('posts')
+        .select('*')
+        .eq('published', true);
+      
+      if (error) throw error;
+      return data;
+    }
+  });
+};
 ```
+
+**Mutations:**
+```typescript
+import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { supabase } from "@/integrations/supabase/client";
+
+export const useCreatePost = () => {
+  const queryClient = useQueryClient();
+  
+  return useMutation({
+    mutationFn: async (newPost) => {
+      const { data, error } = await supabase
+        .from('posts')
+        .insert(newPost)
+        .select()
+        .single();
+      
+      if (error) throw error;
+      return data;
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['posts'] });
+    }
+  });
+};
+```
+
+**Authentication:**
+```typescript
+// Sign up
+const { data, error } = await supabase.auth.signUp({
+  email: 'user@example.com',
+  password: 'securepassword'
+});
+
+// Sign in
+const { data, error } = await supabase.auth.signInWithPassword({
+  email: 'user@example.com',
+  password: 'securepassword'
+});
+
+// Get current user
+const { data: { user } } = await supabase.auth.getUser();
+
+// Sign out
+await supabase.auth.signOut();
+```
+
+**Type Safety:**
+```typescript
+import type { Tables, TablesInsert, TablesUpdate } from "@/integrations/supabase/types";
+
+// Use generated types
+type Post = Tables<'posts'>;
+type NewPost = TablesInsert<'posts'>;
+type UpdatePost = TablesUpdate<'posts'>;
+```
+
+### Best Practices
+- **Always use TanStack Query** for data fetching and mutations
+- **Handle errors gracefully** with try-catch blocks or error boundaries
+- **Use TypeScript types** from `@/integrations/supabase/types`
+- **Enable Row Level Security (RLS)** on all Supabase tables
+- **Never expose sensitive credentials** - only use public keys in environment variables
 
 ## Environment Variables Security Warning
 **CRITICAL**: This is a **client-side application**. All environment variables with the `VITE_` prefix will be **bundled and exposed** in the final build. 
@@ -96,7 +199,9 @@ npm i @supabase/supabase-js
 - Use TypeScript interfaces for type safety
 - Implement responsive design mobile-first
 - Follow React Hook Form patterns with Zod validation for forms
-- Use TanStack Query for API state management
+- Use TanStack Query for all Supabase data fetching and mutations
+- Import Supabase client from `@/integrations/supabase/client`
+- Use generated types from `@/integrations/supabase/types`
 - Import UI components from `@/components/ui/`
 - Use the toast system via `use-toast` hook for notifications
 

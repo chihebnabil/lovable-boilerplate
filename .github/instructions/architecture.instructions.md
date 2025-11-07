@@ -354,6 +354,10 @@ export const DataLoader = <T,>({
 │   │   ├── forms/           # Form-specific components
 │   │   └── features/        # Feature-specific component groups
 │   ├── hooks/               # Custom React hooks (reusable logic)
+│   ├── integrations/
+│   │   └── supabase/        # Supabase client configuration
+│   │       ├── client.ts    # Supabase client instance
+│   │       └── types.ts     # Auto-generated database types
 │   ├── lib/
 │   │   ├── utils.ts         # General utility functions
 │   │   ├── constants.ts     # App constants and enums
@@ -365,6 +369,9 @@ export const DataLoader = <T,>({
 │   ├── App.tsx              # Main app component with routing
 │   ├── main.tsx             # Entry point
 │   └── index.css            # Global styles
+├── supabase/                # Supabase local development
+│   ├── config.toml          # Supabase CLI configuration
+│   └── migrations/          # Database migrations (auto-generated)
 ├── public/                  # Static assets
 ├── package.json             # Dependencies and scripts
 ├── vite.config.ts           # Vite configuration (@ → ./src, port 8080)
