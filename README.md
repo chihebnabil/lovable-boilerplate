@@ -175,6 +175,35 @@ await supabase.auth.signOut();
 - **Error Handling**: Always handle errors from Supabase operations
 - **Real-time**: Use Supabase real-time for live updates without polling
 
+### Local Development with Supabase CLI
+
+The boilerplate includes Supabase CLI configuration for local development:
+
+```bash
+# Initialize Supabase (already done)
+npx supabase init
+
+# Start Supabase locally (requires Docker)
+npx supabase start
+
+# Stop local Supabase
+npx supabase stop
+
+# Generate TypeScript types from your database
+npx supabase gen types typescript --local > src/integrations/supabase/types.ts
+
+# Create a new migration
+npx supabase migration new migration_name
+
+# Push migrations to remote database
+npx supabase db push
+```
+
+The `supabase/` folder contains:
+- **config.toml**: Supabase CLI configuration
+- **migrations/**: Database migration files (version-controlled SQL)
+- **.gitignore**: Excludes temporary files from version control
+
 ## AI Coding Assistant Instructions
 
 This boilerplate is **optimized for AI coding assistants** like GitHub Copilot and Cursor. All comprehensive instructions are located in:
@@ -200,8 +229,13 @@ lovable-boilerplate/
 │   └── instructions/           # AI coding assistant instructions
 │       └── global.instructions.md
 ├── src/
-│   ├── components/ui/          # shadcn/ui components (40+ pre-built)
+│   ├── components/
+│   │   └── ui/                 # shadcn/ui components (40+ pre-built)
 │   ├── hooks/                  # Custom React hooks
+│   ├── integrations/
+│   │   └── supabase/           # Supabase client configuration
+│   │       ├── client.ts       # Supabase client instance
+│   │       └── types.ts        # Auto-generated database types
 │   ├── lib/                    # Utility functions
 │   ├── pages/                  # Route components
 │   │   ├── Index.tsx           # Home page (/)
@@ -209,7 +243,11 @@ lovable-boilerplate/
 │   ├── App.tsx                 # Main app with routing
 │   ├── main.tsx                # Entry point
 │   └── index.css               # Global styles
+├── supabase/                   # Supabase local development
+│   ├── config.toml             # Supabase CLI configuration
+│   └── migrations/             # Database migrations (auto-generated)
 ├── public/                     # Static assets
+├── .env.example                # Environment variables template
 ├── package.json                # Dependencies
 ├── vite.config.ts              # Vite configuration  
 ├── tailwind.config.ts          # Tailwind configuration

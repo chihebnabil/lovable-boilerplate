@@ -93,6 +93,10 @@ src/
 ├── pages/               # Route components (composition only)
 ├── services/            # API calls
 └── context/             # React context providers
+
+supabase/                # Supabase local development
+├── config.toml          # Supabase CLI configuration
+└── migrations/          # Database migrations (auto-generated)
 ```
 
 ## Supabase Integration
@@ -191,6 +195,20 @@ type NewPost = TablesInsert<'posts'>;
 - Use TypeScript types from `@/integrations/supabase/types`
 - Enable Row Level Security (RLS) on your Supabase tables
 - Never expose sensitive credentials in environment variables
+
+### Supabase CLI Commands
+```bash
+# Local development (requires Docker)
+npx supabase start              # Start local Supabase
+npx supabase stop               # Stop local Supabase
+
+# Type generation
+npx supabase gen types typescript --local > src/integrations/supabase/types.ts
+
+# Migrations
+npx supabase migration new migration_name    # Create new migration
+npx supabase db push                          # Push migrations to remote
+```
 
 ## Security Note
 This is a **client-side application**. Only use `VITE_` environment variables for public configuration. Never expose sensitive data like API secrets.
